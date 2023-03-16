@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "Pothos",
+    "price": 10.99,
+    "pot-size": 9,
+    "imgUrl": "https://houseplantresourcecenter.com/wp-content/uploads/2020/09/severin-candrian-IZz3sboy1g8-unsplash-1.jpg",
+    "dimentions": {
+      "hight": 16,
+      "width": 23
+    },
+    "care_level": "Easy",
+    "location": "indoor",
+    "conditions": {
+      "light_amount": "bright",
+      "light_type": "indirect",
+      "water": "once a week",
+      "soil": "general well-draining potting mix"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Monstera",
+    "price": 15.0,
+    "pot-size": 12,
+    "imgUrl": "https://www.ecuagenera.com/WebRoot/Store/Shops/ecuagenera/5D6E/CC17/FA72/3714/2DC1/C0A8/DA44/8763/Monstera_deliciosa2_ml.jpg",
+    "dimentions": {
+      "hight": 45,
+      "width": 32
+    },
+    "care_level": "Easy",
+    "location": "indoor",
+    "conditions": {
+      "light_amount": "bright",
+      "light_type": "indirect",
+      "water": "once a week",
+      "soil": "cactus and succulent mix"
+    }
+  },
+  {
+    "id": 3,
+    "name": "ZZ Plant",
+    "price": 12.0,
+    "pot-size": 15,
+    "imgUrl": "https://cdn.webshopapp.com/shops/29478/files/372531936/650x650x2/zamioculcas-duinplant-s.jpg",
+    "dimentions": {
+      "hight": 40,
+      "width": 25
+    },
+    "care_level": "Easy",
+    "location": "indoor",
+    "conditions": {
+      "light_amount": "bright",
+      "light_type": "indirect",
+      "water": "oncee in two weeks",
+      "soil": "general well-draining potting mix"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Snake Plant",
+    "price": 14.99,
+    "pot-size": 8,
+    "imgUrl": "https://www.thespruce.com/thmb/CpEP-cPmDmz6kwdmVKbhcrdCJuY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/snake-plant-care-overview-1902772-04-d3990a1d0e1d4202a824e929abb12fc1-349b52d646f04f31962707a703b94298.jpeg",
+    "dimentions": {
+      "height": 14,
+      "width": 8
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Once every 2-3 weeks",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Fiddle Leaf Fig",
+    "price": 34.99,
+    "pot-size": 12,
+    "imgUrl": "https://bloomscape.com/wp-content/uploads/2020/08/bloomscape_fiddle-leaf-fig_charcoal-alt-e1625252593949.jpg?ver=279576",
+    "dimentions": {
+      "height": 32,
+      "width": 18
+    },
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Medium",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Rubber Plant",
+    "price": 19.99,
+    "pot-size": 10,
+    "imgUrl": "https://cdn.shopify.com/s/files/1/0597/1460/1169/products/Canon_EOS_80D-_top_left-593026004158-9721-20210928-091435_1800x1800.jpg?v=1634917368",
+    "dimentions": {
+      "height": 24,
+      "width": 16
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Medium",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Philodendron",
+    "price": 16.99,
+    "pot-size": 8,
+    "imgUrl": "https://www.thespruce.com/thmb/zSzhkAqo3q1a82FjxvNwGnO78IE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grow-philodendron-houseplants-1902768-04-8bee1496f67e41c392304329eaea505e.jpg",
+    "dimentions": {
+      "height": 14,
+      "width": 12
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Once every 2-3 weeks",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Chinese Evergreen",
+    "price": 14.99,
+    "pot-size": 8,
+    "imgUrl": "https://www.gardendesign.com/pictures/images/900x705Max/site_3/chinese-evergreen-plant-aglaonema-shutterstock-com_15962.jpg",
+    "dimentions": {
+      "height": 12,
+      "width": 10
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Once every 2-3 weeks",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 9,
+    "name": "String of Pearls",
+    "price": 12.99,
+    "pot-size": 6,
+    "imgUrl": "https://www.mygarden.com/sites/default/files/styles/achor_navigation_l/public/string-of-pearls-senecio-rowleyanus-01481694-florapress.jpg?h=bcee5b65&itok=eBpT8uz4",
+    "dimentions": {
+      "height": 6,
+      "width": 8
+    },
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Direct",
+      "water": "Once every 2-3 weeks",
+      "soil": "Well-draining soil mix"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Bird's Nest Fern",
+    "price": 18.99,
+    "pot-size": 10,
+    "imgUrl": "https://plantura.garden/uk/wp-content/uploads/sites/2/2021/04/birds-nest-fern-pot-1024x683.jpg",
+    "dimentions": {
+      "height": 18,
+      "width": 12
+    },
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Well-draining soil mix"
+    }
+  }
+]
