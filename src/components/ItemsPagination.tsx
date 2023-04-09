@@ -20,22 +20,23 @@ export default function ItemsPagination({ setProducts }) {
       });
   }, [pagination.from, pagination.to]);
 
-  // const [currentPageIndex, setCurrentPageIndex] = useState(1);
   const totalPages = Math.ceil(pagination.count / productsPerPage);
 
   const handlePageChange = (event, page) => {
     const from = (page - 1) * productsPerPage;
     const to = (page - 1) * productsPerPage + productsPerPage;
     setPagination({ ...pagination, from: from, to: to });
-    // setCurrentPageIndex(page);
   };
   return (
-    <Box justifyContent={"center"} alignContent={"center"} display={"flex"}>
-      <Pagination
-        count={totalPages}
-        // page={currentPageIndex}
-        onChange={handlePageChange}
-      />
+    <Box
+      justifyContent={"center"}
+      alignContent={"center"}
+      display={"flex"}
+      sx={{
+        margin: "25px",
+      }}
+    >
+      <Pagination count={totalPages} onChange={handlePageChange} />
     </Box>
   );
 }

@@ -2,12 +2,17 @@
   {
     "id": 1,
     "name": "Pothos",
+    "family": "Araceae",
     "price": 10.99,
     "pot-size": 9,
-    "imgUrl": "https://houseplantresourcecenter.com/wp-content/uploads/2020/09/severin-candrian-IZz3sboy1g8-unsplash-1.jpg",
+    "imgUrls": [
+      "/images/Pothos-1.jpg",
+      "/images/Pothos-2.jpg",
+      "/images/Pothos-3.jpg"
+    ],
     "dimentions": {
-      "hight": 16,
-      "width": 23
+      "h": 16,
+      "w": 23
     },
     "care_level": "Easy",
     "location": "indoor",
@@ -15,18 +20,57 @@
       "light_amount": "bright",
       "light_type": "indirect",
       "water": "once a week",
-      "soil": "general well-draining potting mix"
+      "soil": 1
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 8,
+          "w": 11.5
+        },
+        "potSize": 4.5,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 16,
+          "w": 23
+        },
+        "potSize": 9,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 32,
+          "w": 46
+        },
+        "potSize": 18,
+        "available": false
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 48,
+          "w": 69
+        },
+        "potSize": 27,
+        "available": false
+      }
     }
   },
   {
     "id": 2,
     "name": "Monstera",
+    "family": "Araceae",
     "price": 15.0,
     "pot-size": 12,
-    "imgUrl": "https://www.ecuagenera.com/WebRoot/Store/Shops/ecuagenera/5D6E/CC17/FA72/3714/2DC1/C0A8/DA44/8763/Monstera_deliciosa2_ml.jpg",
+    "imgUrls": [
+      "/images/Monstera-1.jpg",
+      "/images/Monstera-2.jpg",
+      "/images/Monstera-3.jpg"
+    ],
     "dimentions": {
-      "hight": 45,
-      "width": 32
+      "h": 45,
+      "w": 32
     },
     "care_level": "Easy",
     "location": "indoor",
@@ -34,7 +78,41 @@
       "light_amount": "bright",
       "light_type": "indirect",
       "water": "once a week",
-      "soil": "cactus and succulent mix"
+      "soil": 3
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 22.5,
+          "w": 16
+        },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 45,
+          "w": 32
+        },
+        "potSize": 12,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 90,
+          "w": 64
+        },
+        "potSize": 24,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 135,
+          "w": 96
+        },
+        "potSize": 36,
+        "available": true
+      }
     }
   },
   {
@@ -42,10 +120,15 @@
     "name": "ZZ Plant",
     "price": 12.0,
     "pot-size": 15,
-    "imgUrl": "https://cdn.webshopapp.com/shops/29478/files/372531936/650x650x2/zamioculcas-duinplant-s.jpg",
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/ZZ-Plant-1.jpg",
+      "/images/ZZ-Plant-2.jpg",
+      "/images/ZZ-Plant-3.jpg"
+    ],
     "dimentions": {
-      "hight": 40,
-      "width": 25
+      "h": 40,
+      "w": 25
     },
     "care_level": "Easy",
     "location": "indoor",
@@ -53,7 +136,41 @@
       "light_amount": "bright",
       "light_type": "indirect",
       "water": "oncee in two weeks",
-      "soil": "general well-draining potting mix"
+      "soil": 1
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 20,
+          "w": 12.5
+        },
+        "potSize": 7.5,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 40,
+          "w": 25
+        },
+        "potSize": 15,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 80,
+          "w": 50
+        },
+        "potSize": 30,
+        "available": false
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 120,
+          "w": 75
+        },
+        "potSize": 45,
+        "available": true
+      }
     }
   },
   {
@@ -61,10 +178,15 @@
     "name": "Snake Plant",
     "price": 14.99,
     "pot-size": 8,
-    "imgUrl": "https://www.thespruce.com/thmb/CpEP-cPmDmz6kwdmVKbhcrdCJuY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/snake-plant-care-overview-1902772-04-d3990a1d0e1d4202a824e929abb12fc1-349b52d646f04f31962707a703b94298.jpeg",
+    "family": "Asparagaceae",
+    "imgUrls": [
+      "/images/Snake-Plant-1.jpg",
+      "/images/Snake-Plant-2.jpg",
+      "/images/Snake-Plant-3.jpg"
+    ],
     "dimentions": {
-      "height": 14,
-      "width": 8
+      "h": 14,
+      "w": 8
     },
     "care_level": "Easy",
     "location": "Indoor",
@@ -72,121 +194,389 @@
       "light_amount": "Low",
       "light_type": "Indirect",
       "water": "Once every 2-3 weeks",
-      "soil": "Well-draining soil mix"
+      "soil": 1
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 7,
+          "w": 4
+        },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 14,
+          "w": 8
+        },
+        "potSize": 8,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 28,
+          "w": 16
+        },
+        "potSize": 16,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 42,
+          "w": 24
+        },
+        "potSize": 24,
+        "available": false
+      }
     }
   },
   {
     "id": 5,
-    "name": "Fiddle Leaf Fig",
-    "price": 34.99,
-    "pot-size": 12,
-    "imgUrl": "https://bloomscape.com/wp-content/uploads/2020/08/bloomscape_fiddle-leaf-fig_charcoal-alt-e1625252593949.jpg?ver=279576",
-    "dimentions": {
-      "height": 32,
-      "width": 18
-    },
-    "care_level": "Moderate",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Medium",
-      "light_type": "Indirect",
-      "water": "Once a week",
-      "soil": "Well-draining soil mix"
-    }
-  },
-  {
-    "id": 6,
     "name": "Rubber Plant",
-    "price": 19.99,
+    "price": 18.0,
     "pot-size": 10,
-    "imgUrl": "https://cdn.shopify.com/s/files/1/0597/1460/1169/products/Canon_EOS_80D-_top_left-593026004158-9721-20210928-091435_1800x1800.jpg?v=1634917368",
+    "family": "Moraceae",
+    "imgUrls": [
+      "/images/Rubber-Plant-1.jpg",
+      "/images/Rubber-Plant-2.jpg",
+      "/images/Rubber-Plant-3.jpg"
+    ],
     "dimentions": {
-      "height": 24,
-      "width": 16
-    },
-    "care_level": "Easy",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Medium",
-      "light_type": "Indirect",
-      "water": "Once a week",
-      "soil": "Well-draining soil mix"
-    }
-  },
-  {
-    "id": 7,
-    "name": "Philodendron",
-    "price": 16.99,
-    "pot-size": 8,
-    "imgUrl": "https://www.thespruce.com/thmb/zSzhkAqo3q1a82FjxvNwGnO78IE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grow-philodendron-houseplants-1902768-04-8bee1496f67e41c392304329eaea505e.jpg",
-    "dimentions": {
-      "height": 14,
-      "width": 12
-    },
-    "care_level": "Easy",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Low",
-      "light_type": "Indirect",
-      "water": "Once every 2-3 weeks",
-      "soil": "Well-draining soil mix"
-    }
-  },
-  {
-    "id": 8,
-    "name": "Chinese Evergreen",
-    "price": 14.99,
-    "pot-size": 8,
-    "imgUrl": "https://www.gardendesign.com/pictures/images/900x705Max/site_3/chinese-evergreen-plant-aglaonema-shutterstock-com_15962.jpg",
-    "dimentions": {
-      "height": 12,
-      "width": 10
-    },
-    "care_level": "Easy",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Low",
-      "light_type": "Indirect",
-      "water": "Once every 2-3 weeks",
-      "soil": "Well-draining soil mix"
-    }
-  },
-  {
-    "id": 9,
-    "name": "String of Pearls",
-    "price": 12.99,
-    "pot-size": 6,
-    "imgUrl": "https://www.mygarden.com/sites/default/files/styles/achor_navigation_l/public/string-of-pearls-senecio-rowleyanus-01481694-florapress.jpg?h=bcee5b65&itok=eBpT8uz4",
-    "dimentions": {
-      "height": 6,
-      "width": 8
+      "h": 25,
+      "w": 10
     },
     "care_level": "Moderate",
     "location": "Indoor",
     "conditions": {
       "light_amount": "Bright",
-      "light_type": "Direct",
-      "water": "Once every 2-3 weeks",
-      "soil": "Well-draining soil mix"
+      "light_type": "Indirect",
+      "water": "Once every 1-2 weeks",
+      "soil": 2
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 12.5,
+          "w": 5
+        },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 25,
+          "w": 10
+        },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 50,
+          "w": 20
+        },
+        "potSize": 20,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 75,
+          "w": 30
+        },
+        "potSize": 30,
+        "available": false
+      }
     }
   },
   {
-    "id": 10,
-    "name": "Bird's Nest Fern",
-    "price": 18.99,
-    "pot-size": 10,
-    "imgUrl": "https://plantura.garden/uk/wp-content/uploads/sites/2/2021/04/birds-nest-fern-pot-1024x683.jpg",
+    "id": 6,
+    "name": "Monstera Deliciosa",
+    "price": 25.0,
+    "pot-size": 12,
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/Monstera-Deliciosa-1.jpg",
+      "/images/Monstera-Deliciosa-2.jpg",
+      "/images/Monstera-Deliciosa-3.jpg"
+    ],
     "dimentions": {
-      "height": 18,
-      "width": 12
+      "h": 30,
+      "w": 20
     },
     "care_level": "Moderate",
     "location": "Indoor",
     "conditions": {
-      "light_amount": "Low",
+      "light_amount": "Bright",
       "light_type": "Indirect",
-      "water": "Once a week",
-      "soil": "Well-draining soil mix"
+      "water": "Once every 1-2 weeks",
+      "soil": 2
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 15,
+          "w": 10
+        },
+        "potSize": 6,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 30,
+          "w": 20
+        },
+        "potSize": 12,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 60,
+          "w": 40
+        },
+        "potSize": 24,
+        "available": false
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 90,
+          "w": 60
+        },
+        "potSize": 36,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 7,
+    "name": "ZZ Plant",
+    "price": 20.0,
+    "pot-size": 10,
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/ZZ-Plant-1.jpg",
+      "/images/ZZ-Plant-2.jpg",
+      "/images/ZZ-Plant-3.jpg"
+    ],
+    "dimentions": {
+      "h": 20,
+      "w": 10
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low to Bright",
+      "light_type": "Indirect",
+      "water": "Once every 2-3 weeks",
+      "soil": 2
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 10,
+          "w": 5
+        },
+        "potSize": 5,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 20,
+          "w": 10
+        },
+        "potSize": 10,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 40,
+          "w": 20
+        },
+        "potSize": 20,
+        "available": false
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 60,
+          "w": 30
+        },
+        "potSize": 30,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "Fiddle Leaf Fig",
+    "price": 35.0,
+    "pot-size": 12,
+    "family": "Moraceae",
+    "imgUrls": [
+      "/images/Fiddle-Leaf-Fig-1.jpg",
+      "/images/Fiddle-Leaf-Fig-2.jpg",
+      "/images/Fiddle-Leaf-Fig-3.jpg"
+    ],
+    "dimentions": {
+      "h": 40,
+      "w": 20
+    },
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Once every 1-2 weeks",
+      "soil": 2
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 20,
+          "w": 10
+        },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 40,
+          "w": 20
+        },
+        "potSize": 12,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 80,
+          "w": 40
+        },
+        "potSize": 24,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 120,
+          "w": 60
+        },
+        "potSize": 36,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 9,
+    "name": "Boston Fern",
+    "price": 25.0,
+    "pot-size": 8,
+    "family": "Nephrolepidaceae",
+    "imgUrls": [
+      "/images/Boston-Fern-1.jpg",
+      "/images/Boston-Fern-2.jpg",
+      "/images/Boston-Fern-3.jpg"
+    ],
+    "dimentions": {
+      "h": 15,
+      "w": 20
+    },
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Keep soil consistently moist",
+      "soil": 1
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 7.5,
+          "w": 10
+        },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 15,
+          "w": 20
+        },
+        "potSize": 8,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 30,
+          "w": 40
+        },
+        "potSize": 16,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 45,
+          "w": 60
+        },
+        "potSize": 24,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Rubber Plant",
+    "price": 30.0,
+    "pot-size": 10,
+    "family": "Moraceae",
+    "imgUrls": [
+      "/images/Rubber-Plant-1.jpg",
+      "/images/Rubber-Plant-2.jpg",
+      "/images/Rubber-Plant-3.jpg"
+    ],
+    "dimentions": {
+      "h": 30,
+      "w": 15
+    },
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Medium to Bright",
+      "light_type": "Indirect",
+      "water": "Once every 1-2 weeks",
+      "soil": 2
+    },
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 15,
+          "w": 7.5
+        },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 30,
+          "w": 15
+        },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 60,
+          "w": 30
+        },
+        "potSize": 20,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 90,
+          "w": 45
+        },
+        "potSize": 30,
+        "available": false
+      }
     }
   }
 ]

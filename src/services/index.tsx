@@ -1,4 +1,5 @@
 import products from "../data/items.json";
+import soils from "../data/soil.json";
 
 const service = {
   getData: ({ from, to }) => {
@@ -18,9 +19,25 @@ const service = {
     if (!product) {
       throw new Error(`Product with id ${id} not found`);
     }
-
     return product;
+  },
+
+  getSoilTypeById: (id) => {
+    const soilType = soils.find((soil) => soil.id === id);
+
+    if (!soilType) {
+      throw new Error(`Soil type with id ${id} not found`);
+    }
+    return soilType;
   },
 };
 
 export default service;
+
+// getSoilTypes: (soil) => {
+
+//   const soilImage = soils.find((p) => p.id === soil);
+
+//   return soilImage;
+
+// },

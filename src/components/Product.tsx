@@ -1,203 +1,159 @@
-import React, { useState } from "react";
-import { ACTIONS } from "../App";
-
+// Product.tsx
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardMedia,
   CardContent,
   Typography,
   Button,
-  makeStyles,
+  IconButton,
   Box,
 } from "@material-ui/core";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
-
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { amber, deepOrange, orange } from "@material-ui/core/colors";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 300,
-    height: 411,
-  },
-  media: {
-    height: 300,
-  },
-  content: {
-    width: 268,
-    height: 79,
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-  },
-  button: {
-    alignSelf: "right",
-    bottom: 0,
-  },
-  price: {
-    textAlign: "right",
-  },
-  h6: {
-    textAlign: "left",
-  },
-}));
-
-interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import useStyles from "./Product.styles";
+import { useCart, useCartDispatch } from "../context/CartContext";
+import ProductDetails from "./ProductDetails";
+import service from "../services";
 
 const Product = ({
   price,
   id,
   title,
-  quantity,
-  image,
-  dimensions,
+  images,
+  dimentions,
   care_level,
   location,
   conditions,
-  dispatch,
+  soil,
 }) => {
+  const dispatch = useCartDispatch();
+  const cart = useCart();
   const classes = useStyles();
+  const [hover, setHover] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
+  const [imgSrc, setImgSrc] = useState(null);
+
+  const productData = service.getProductById(id);
+
+  const firstAvailableSize = Object.entries(productData.sizes).find(
+    ([, sizeDetails]) => sizeDetails.available
+  )?.[0];
+
+  const hasAvailableSize = firstAvailableSize !== undefined;
+
+  useEffect(() => {
+    const loadImage = async () => {
+      const imagePath = await import(`../data${images[0]}`);
+      setImgSrc(imagePath.default);
+    };
+
+    loadImage();
+  }, [images]);
+
+  const handleOpenDetails = () => {
+    setShowDetails(true);
+  };
+
+  const handleCloseDetails = () => {
+    setShowDetails(false);
+  };
   return (
-    <Card className={classes.root}>
-      <CardMedia className={classes.media} image={image} title="uuuuuuu" />
-      <CardContent className={classes.content}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography variant="h6" className={classes.h6}>
-                  {title}
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  {location}
-                </Typography>
-                <Typography variant="body2">{care_level}</Typography>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="subtitle1"
-                component="div"
-                className={classes.price}
-              >
-                € {price}
-              </Typography>
-              <br />
+    <React.Fragment>
+      <Card className={classes.root}>
+        <div
+          className={`${classes.imageContainer} ${
+            hover ? classes.imageContainerHover : ""
+          }`}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
+          <CardMedia
+            className={`${classes.media} ${
+              !hasAvailableSize ? classes.fadedImage : ""
+            }`}
+            image={imgSrc}
+            title="uuuuuuu"
+            onClick={handleOpenDetails}
+            style={{ cursor: "pointer" }}
+          />
+          <IconButton
+            className={`${classes.favoriteButton} ${
+              hover ? classes.showFavoriteButton : ""
+            }`}
+            edge="end"
+            color="inherit"
+            aria-label="Favorite"
+          >
+            <FavoriteBorder />
+          </IconButton>
+          <Box
+            className={`${classes.button} ${
+              hover && hasAvailableSize ? classes.showButton : ""
+            }`}
+          >
+            {hasAvailableSize ? (
               <Button
+                size="small"
                 color="inherit"
-                startIcon={<ShoppingCartIcon />}
                 onClick={() =>
                   dispatch({
-                    type: ACTIONS.ADD_PRODUCT_TO_CART,
-                    payload: { price, title, image, id },
+                    type: "ADD_ITEM",
+                    payload: {
+                      id,
+                      options: {
+                        size: firstAvailableSize,
+                        pot: "No Pot",
+                      },
+                    },
                   })
                 }
               >
                 Buy
               </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+            ) : null}
+          </Box>
+        </div>
+        <CardContent className={classes.content}>
+          <Typography variant="h6">{title}</Typography>
+          <Typography
+            className={!hasAvailableSize ? classes.hidePrice : ""}
+            variant="subtitle1"
+          >
+            € {price}
+          </Typography>
+          {!hasAvailableSize && (
+            <Typography
+              gutterBottom
+              variant="body1"
+              component="p"
+              color="error"
+            >
+              Out of Stock
+            </Typography>
+          )}
+          <Typography variant="body2">{location}</Typography>
+          <Typography variant="body2">{care_level}</Typography>
+        </CardContent>
+      </Card>
+      <ProductDetails
+        open={showDetails}
+        onClose={handleCloseDetails}
+        product={{
+          id,
+          title,
+          price,
+          images,
+          dimentions,
+          care_level,
+          location,
+          conditions,
+          soil,
+          sizes: productData.sizes,
+        }}
+      />
+    </React.Fragment>
   );
 };
 
 export default Product;
-
-// import { ACTIONS } from "../App";
-// import { useState } from "react";
-// import Card from "@mui/material/Card";
-// import CardActions from "@mui/material/CardActions";
-// import CardContent from "@mui/material/CardContent";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-// import CardMedia from "@mui/material/CardMedia";
-// import Tooltip from "@mui/material/Tooltip";
-
-// export default function Product({
-//   dispatch,
-//   price,
-//   title,
-//   quantity,
-//   image,
-//   id,
-//   dimensions,
-//   care_level,
-//   location,
-//   conditions,
-// }) {
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   const handleMouseEnter = () => {
-//     setIsHovered(true);
-//   };
-
-//   const handleMouseLeave = () => {
-//     setIsHovered(false);
-//   };
-
-//   return (
-//     <Card
-//       sx={{ minWidth: 345 }}
-//       onMouseEnter={handleMouseEnter}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <CardMedia component="img" height="140" image={image} alt={title} />
-//       {isHovered && (
-//         <CardContent>
-//           <Typography variant="body2" color="text.secondary">
-//             {/* Dimensions: {dimensions} */}
-//           </Typography>
-//           <Typography variant="body2" color="text.secondary">
-//             Care Level: {care_level}
-//           </Typography>
-//           <Typography variant="body2" color="text.secondary">
-//             Location: {location}
-//           </Typography>
-//           <Typography variant="body2" color="text.secondary">
-//             Light: {conditions.light_type}, {conditions.light_amount}
-//           </Typography>
-//           <Typography variant="body2" color="text.secondary">
-//             Water: {conditions.water}
-//           </Typography>
-//           <Typography variant="body2" color="text.secondary">
-//             Soil: {conditions.soil}
-//           </Typography>
-//         </CardContent>
-//       )}
-//       <CardActions>
-//         <Tooltip title="Add to Cart">
-//           <Button
-//             size="small"
-//             onClick={() =>
-//               dispatch({
-//                 type: ACTIONS.ADD_PRODUCT_TO_CART,
-//                 payload: { price, title, image, id },
-//               })
-//             }
-//           >
-//             Buy
-//           </Button>
-//         </Tooltip>
-//       </CardActions>
-//     </Card>
-//   );
-// }
