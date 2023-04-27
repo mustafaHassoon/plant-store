@@ -3,30 +3,60 @@ import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
 import service from "../services";
 
-export default function ItemsPagination({ setProducts }) {
-  const productsPerPage = 9; // for example
+export default function ItemsPagination({
+  setProducts,
+  heightFilter,
+  locationFilter,
+  careLevelFilter,
+  sizeFilter,
+  priceRange,
+}) {
+  const productsPerPage = 6;
   const [pagination, setPagination] = useState({
     count: 0,
     from: 0,
     to: productsPerPage,
   });
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
+    setCurrentPage(1);
+  }, [heightFilter, locationFilter, careLevelFilter, sizeFilter]);
+
+  useEffect(() => {
+    const from = (currentPage - 1) * productsPerPage;
+    const to = from + productsPerPage;
+
     service
-      .getData({ from: pagination.from, to: pagination.to })
+      .getData(
+        { from, to },
+        heightFilter,
+        locationFilter,
+        careLevelFilter,
+        sizeFilter,
+        priceRange
+      )
       .then((response: any) => {
+        const data = response.data;
+
+        setProducts(data);
         setPagination({ ...pagination, count: response.count });
-        setProducts(response.data);
       });
-  }, [pagination.from, pagination.to]);
+  }, [
+    currentPage,
+    heightFilter,
+    locationFilter,
+    careLevelFilter,
+    sizeFilter,
+    priceRange,
+  ]);
 
   const totalPages = Math.ceil(pagination.count / productsPerPage);
 
   const handlePageChange = (event, page) => {
-    const from = (page - 1) * productsPerPage;
-    const to = (page - 1) * productsPerPage + productsPerPage;
-    setPagination({ ...pagination, from: from, to: to });
+    setCurrentPage(page);
   };
+
   return (
     <Box
       justifyContent={"center"}
@@ -36,7 +66,13 @@ export default function ItemsPagination({ setProducts }) {
         margin: "25px",
       }}
     >
-      <Pagination count={totalPages} onChange={handlePageChange} />
+      {totalPages > 1 && (
+        <Pagination
+          count={totalPages}
+          onChange={handlePageChange}
+          page={currentPage} // Add this to make sure the pagination component updates the selected page
+        />
+      )}
     </Box>
   );
 }

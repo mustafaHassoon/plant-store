@@ -3,27 +3,23 @@
     "id": 1,
     "name": "Pothos",
     "family": "Araceae",
-    "price": 10.99,
-    "pot-size": 9,
     "imgUrls": [
       "/images/Pothos-1.jpg",
       "/images/Pothos-2.jpg",
       "/images/Pothos-3.jpg"
     ],
-    "dimentions": {
-      "h": 16,
-      "w": 23
-    },
     "care_level": "Easy",
-    "location": "indoor",
+    "location": "Indoor",
     "conditions": {
-      "light_amount": "bright",
-      "light_type": "indirect",
-      "water": "once a week",
-      "soil": 1
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Potting Soil"
     },
+    "description": "Fast-growing, low-maintenance trailing plant with heart-shaped leaves, the Pothos is excellent for beginners, adapting to various light conditions and purifying the air in your space. This hardy plant can be grown in hanging baskets or as a tabletop centerpiece, adding a touch of natural beauty to any room. Pothos is often associated with good fortune and prosperity, symbolizing perseverance and the ability to flourish even in challenging environments.",
     "sizes": {
       "small": {
+        "price": 4.99,
         "dimensions": {
           "h": 8,
           "w": 11.5
@@ -32,6 +28,7 @@
         "available": false
       },
       "medium": {
+        "price": 10.99,
         "dimensions": {
           "h": 16,
           "w": 23
@@ -40,6 +37,7 @@
         "available": false
       },
       "large": {
+        "price": 16.99,
         "dimensions": {
           "h": 32,
           "w": 46
@@ -48,6 +46,7 @@
         "available": false
       },
       "extraLarge": {
+        "price": 22.99,
         "dimensions": {
           "h": 48,
           "w": 69
@@ -61,27 +60,23 @@
     "id": 2,
     "name": "Monstera",
     "family": "Araceae",
-    "price": 15.0,
-    "pot-size": 12,
     "imgUrls": [
       "/images/Monstera-1.jpg",
       "/images/Monstera-2.jpg",
       "/images/Monstera-3.jpg"
     ],
-    "dimentions": {
-      "h": 45,
-      "w": 32
-    },
     "care_level": "Easy",
-    "location": "indoor",
+    "location": "Indoor",
     "conditions": {
-      "light_amount": "bright",
-      "light_type": "indirect",
-      "water": "once a week",
-      "soil": 3
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Cactus and Succulent Mix"
     },
+    "description": "The Monstera is a tropical plant with large, unique split leaves, making it a perfect indoor statement piece with air-purifying qualities. Requiring indirect light and moderate watering for optimal growth, this stunning plant brings a sense of the tropics to any living space. As a symbol of personal growth and transformation, the Monstera's leaves are said to represent the many paths one may take in life, encouraging self-discovery and embracing change.",
     "sizes": {
       "small": {
+        "price": 9.99,
         "dimensions": {
           "h": 22.5,
           "w": 16
@@ -90,6 +85,7 @@
         "available": true
       },
       "medium": {
+        "price": 15.0,
         "dimensions": {
           "h": 45,
           "w": 32
@@ -98,6 +94,7 @@
         "available": false
       },
       "large": {
+        "price": 25.0,
         "dimensions": {
           "h": 90,
           "w": 64
@@ -106,6 +103,7 @@
         "available": true
       },
       "extraLarge": {
+        "price": 35.0,
         "dimensions": {
           "h": 135,
           "w": 96
@@ -118,28 +116,24 @@
   {
     "id": 3,
     "name": "ZZ Plant",
-    "price": 12.0,
-    "pot-size": 15,
     "family": "Araceae",
     "imgUrls": [
       "/images/ZZ-Plant-1.jpg",
       "/images/ZZ-Plant-2.jpg",
       "/images/ZZ-Plant-3.jpg"
     ],
-    "dimentions": {
-      "h": 40,
-      "w": 25
-    },
     "care_level": "Easy",
-    "location": "indoor",
+    "location": "Indoor",
     "conditions": {
-      "light_amount": "bright",
-      "light_type": "indirect",
-      "water": "oncee in two weeks",
-      "soil": 1
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Every two weeks",
+      "soil": "Potting Soil"
     },
+    "description": "The hardy ZZ Plant is a low-light tolerant plant with shiny green leaves, known for its ability to thrive in various conditions. Perfect for busy plant owners seeking low-maintenance options, this resilient plant is an excellent choice for bringing life to dimly lit spaces. In addition to its air-purifying properties, the ZZ Plant symbolizes friendship and prosperity, making it an ideal gift for loved ones or a token of good fortune in your own home.",
     "sizes": {
       "small": {
+        "price": 6.99,
         "dimensions": {
           "h": 20,
           "w": 12.5
@@ -148,6 +142,7 @@
         "available": false
       },
       "medium": {
+        "price": 12.0,
         "dimensions": {
           "h": 40,
           "w": 25
@@ -156,6 +151,7 @@
         "available": true
       },
       "large": {
+        "price": 18.0,
         "dimensions": {
           "h": 80,
           "w": 50
@@ -164,6 +160,7 @@
         "available": false
       },
       "extraLarge": {
+        "price": 25.0,
         "dimensions": {
           "h": 120,
           "w": 75
@@ -176,28 +173,24 @@
   {
     "id": 4,
     "name": "Snake Plant",
-    "price": 14.99,
-    "pot-size": 8,
-    "family": "Asparagaceae",
+    "family": "Asparagus",
     "imgUrls": [
       "/images/Snake-Plant-1.jpg",
       "/images/Snake-Plant-2.jpg",
       "/images/Snake-Plant-3.jpg"
     ],
-    "dimentions": {
-      "h": 14,
-      "w": 8
-    },
     "care_level": "Easy",
     "location": "Indoor",
     "conditions": {
       "light_amount": "Low",
       "light_type": "Indirect",
-      "water": "Once every 2-3 weeks",
-      "soil": 1
+      "water": "Every 2-3 weeks",
+      "soil": "Potting Soil"
     },
+    "description": "The tall, upright Snake Plant features long, sword-like leaves, making it a striking addition to any room. Drought-tolerant, air-purifying, and low-light friendly, this plant is an excellent choice for beginners or busy plant owners. Its architectural form lends itself well to modern and minimalist interiors. As a symbol of protection and resilience, the Snake Plant is said to guard against negative energy and promote positive vibes in its surroundings.",
     "sizes": {
       "small": {
+        "price": 8.99,
         "dimensions": {
           "h": 7,
           "w": 4
@@ -206,6 +199,7 @@
         "available": true
       },
       "medium": {
+        "price": 14.99,
         "dimensions": {
           "h": 14,
           "w": 8
@@ -214,6 +208,7 @@
         "available": false
       },
       "large": {
+        "price": 21.99,
         "dimensions": {
           "h": 28,
           "w": 16
@@ -222,6 +217,7 @@
         "available": true
       },
       "extraLarge": {
+        "price": 29.99,
         "dimensions": {
           "h": 42,
           "w": 24
@@ -233,230 +229,55 @@
   },
   {
     "id": 5,
-    "name": "Rubber Plant",
-    "price": 18.0,
-    "pot-size": 10,
-    "family": "Moraceae",
-    "imgUrls": [
-      "/images/Rubber-Plant-1.jpg",
-      "/images/Rubber-Plant-2.jpg",
-      "/images/Rubber-Plant-3.jpg"
-    ],
-    "dimentions": {
-      "h": 25,
-      "w": 10
-    },
-    "care_level": "Moderate",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Bright",
-      "light_type": "Indirect",
-      "water": "Once every 1-2 weeks",
-      "soil": 2
-    },
-    "sizes": {
-      "small": {
-        "dimensions": {
-          "h": 12.5,
-          "w": 5
-        },
-        "potSize": 5,
-        "available": true
-      },
-      "medium": {
-        "dimensions": {
-          "h": 25,
-          "w": 10
-        },
-        "potSize": 10,
-        "available": false
-      },
-      "large": {
-        "dimensions": {
-          "h": 50,
-          "w": 20
-        },
-        "potSize": 20,
-        "available": true
-      },
-      "extraLarge": {
-        "dimensions": {
-          "h": 75,
-          "w": 30
-        },
-        "potSize": 30,
-        "available": false
-      }
-    }
-  },
-  {
-    "id": 6,
-    "name": "Monstera Deliciosa",
-    "price": 25.0,
-    "pot-size": 12,
-    "family": "Araceae",
-    "imgUrls": [
-      "/images/Monstera-Deliciosa-1.jpg",
-      "/images/Monstera-Deliciosa-2.jpg",
-      "/images/Monstera-Deliciosa-3.jpg"
-    ],
-    "dimentions": {
-      "h": 30,
-      "w": 20
-    },
-    "care_level": "Moderate",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Bright",
-      "light_type": "Indirect",
-      "water": "Once every 1-2 weeks",
-      "soil": 2
-    },
-    "sizes": {
-      "small": {
-        "dimensions": {
-          "h": 15,
-          "w": 10
-        },
-        "potSize": 6,
-        "available": false
-      },
-      "medium": {
-        "dimensions": {
-          "h": 30,
-          "w": 20
-        },
-        "potSize": 12,
-        "available": true
-      },
-      "large": {
-        "dimensions": {
-          "h": 60,
-          "w": 40
-        },
-        "potSize": 24,
-        "available": false
-      },
-      "extraLarge": {
-        "dimensions": {
-          "h": 90,
-          "w": 60
-        },
-        "potSize": 36,
-        "available": true
-      }
-    }
-  },
-  {
-    "id": 7,
-    "name": "ZZ Plant",
-    "price": 20.0,
-    "pot-size": 10,
-    "family": "Araceae",
-    "imgUrls": [
-      "/images/ZZ-Plant-1.jpg",
-      "/images/ZZ-Plant-2.jpg",
-      "/images/ZZ-Plant-3.jpg"
-    ],
-    "dimentions": {
-      "h": 20,
-      "w": 10
-    },
-    "care_level": "Easy",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Low to Bright",
-      "light_type": "Indirect",
-      "water": "Once every 2-3 weeks",
-      "soil": 2
-    },
-    "sizes": {
-      "small": {
-        "dimensions": {
-          "h": 10,
-          "w": 5
-        },
-        "potSize": 5,
-        "available": false
-      },
-      "medium": {
-        "dimensions": {
-          "h": 20,
-          "w": 10
-        },
-        "potSize": 10,
-        "available": true
-      },
-      "large": {
-        "dimensions": {
-          "h": 40,
-          "w": 20
-        },
-        "potSize": 20,
-        "available": false
-      },
-      "extraLarge": {
-        "dimensions": {
-          "h": 60,
-          "w": 30
-        },
-        "potSize": 30,
-        "available": true
-      }
-    }
-  },
-  {
-    "id": 8,
     "name": "Fiddle Leaf Fig",
-    "price": 35.0,
-    "pot-size": 12,
     "family": "Moraceae",
     "imgUrls": [
       "/images/Fiddle-Leaf-Fig-1.jpg",
       "/images/Fiddle-Leaf-Fig-2.jpg",
       "/images/Fiddle-Leaf-Fig-3.jpg"
     ],
-    "dimentions": {
-      "h": 40,
-      "w": 20
-    },
     "care_level": "Moderate",
     "location": "Indoor",
     "conditions": {
-      "light_amount": "Bright",
+      "light_amount": "Medium",
       "light_type": "Indirect",
-      "water": "Once every 1-2 weeks",
-      "soil": 2
+      "water": "Once a week",
+      "soil": "Potting Soil"
     },
+    "description": "The stylish Fiddle Leaf Fig is a popular plant with large, glossy leaves that adds a touch of nature to living spaces. Requiring bright, indirect light and careful watering for optimal growth, this statement plant can grow quite tall, making it an eye-catching focal point in any room. Symbolizing growth, abundance, and good fortune, the Fiddle Leaf Fig is a reflection of its owner's nurturing spirit and commitment to personal development.",
     "sizes": {
       "small": {
+        "price": 19.99,
         "dimensions": {
-          "h": 20,
-          "w": 10
+          "h": 16,
+          "w": 9
         },
         "potSize": 6,
         "available": true
       },
       "medium": {
+        "price": 34.99,
         "dimensions": {
-          "h": 40,
-          "w": 20
+          "h": 32,
+          "w": 18
         },
         "potSize": 12,
-        "available": false
-      },
-      "large": {
-        "dimensions": {
-          "h": 80,
-          "w": 40
-        },
-        "potSize": 24,
         "available": true
       },
-      "extraLarge": {
+      "large": {
+        "price": 49.99,
         "dimensions": {
-          "h": 120,
-          "w": 60
+          "h": 64,
+          "w": 36
+        },
+        "potSize": 24,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 64.99,
+        "dimensions": {
+          "h": 96,
+          "w": 54
         },
         "potSize": 36,
         "available": false
@@ -464,117 +285,286 @@
     }
   },
   {
-    "id": 9,
-    "name": "Boston Fern",
-    "price": 25.0,
-    "pot-size": 8,
-    "family": "Nephrolepidaceae",
-    "imgUrls": [
-      "/images/Boston-Fern-1.jpg",
-      "/images/Boston-Fern-2.jpg",
-      "/images/Boston-Fern-3.jpg"
-    ],
-    "dimentions": {
-      "h": 15,
-      "w": 20
-    },
-    "care_level": "Moderate",
-    "location": "Indoor",
-    "conditions": {
-      "light_amount": "Bright",
-      "light_type": "Indirect",
-      "water": "Keep soil consistently moist",
-      "soil": 1
-    },
-    "sizes": {
-      "small": {
-        "dimensions": {
-          "h": 7.5,
-          "w": 10
-        },
-        "potSize": 4,
-        "available": true
-      },
-      "medium": {
-        "dimensions": {
-          "h": 15,
-          "w": 20
-        },
-        "potSize": 8,
-        "available": false
-      },
-      "large": {
-        "dimensions": {
-          "h": 30,
-          "w": 40
-        },
-        "potSize": 16,
-        "available": true
-      },
-      "extraLarge": {
-        "dimensions": {
-          "h": 45,
-          "w": 60
-        },
-        "potSize": 24,
-        "available": false
-      }
-    }
-  },
-  {
-    "id": 10,
+    "id": 6,
     "name": "Rubber Plant",
-    "price": 30.0,
-    "pot-size": 10,
     "family": "Moraceae",
     "imgUrls": [
       "/images/Rubber-Plant-1.jpg",
       "/images/Rubber-Plant-2.jpg",
       "/images/Rubber-Plant-3.jpg"
     ],
-    "dimentions": {
-      "h": 30,
-      "w": 15
-    },
     "care_level": "Easy",
     "location": "Indoor",
     "conditions": {
-      "light_amount": "Medium to Bright",
+      "light_amount": "Medium",
       "light_type": "Indirect",
-      "water": "Once every 1-2 weeks",
-      "soil": 2
+      "water": "Once a week",
+      "soil": "Potting Soil"
     },
+    "description": "The attractive Rubber Plant has glossy, dark green leaves and is known for its air-purifying properties. Thriving in bright, indirect light and requiring moderate watering, this stunning plant is a visually striking addition to any home or office. Symbolizing wealth, abundance, and adaptability, the Rubber Plant encourages personal growth and resilience in the face of change, making it an inspiring presence in any space.",
     "sizes": {
       "small": {
         "dimensions": {
-          "h": 15,
-          "w": 7.5
+          "h": 12,
+          "w": 8
         },
         "potSize": 5,
+        "price": 19.99,
         "available": true
       },
       "medium": {
         "dimensions": {
-          "h": 30,
-          "w": 15
+          "h": 24,
+          "w": 16
         },
         "potSize": 10,
+        "price": 29.99,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 48,
+          "w": 32
+        },
+        "potSize": 20,
+        "price": 44.99,
+        "available": false
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 72,
+          "w": 48
+        },
+        "potSize": 30,
+        "price": 64.99,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 7,
+    "name": "Philodendron",
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/Philodendron-1.jpg",
+      "/images/Philodendron-2.jpg",
+      "/images/Philodendron-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Every 2-3 weeks",
+      "soil": "Potting Soil"
+    },
+    "description": "The easy-to-grow Philodendron is a trailing plant with heart-shaped leaves, perfect for beginners. Adapting well to various lighting conditions, it adds a touch of greenery to any space, whether as a hanging plant or in a tabletop arrangement. Symbolizing love, healing, and the heart's resilience, the Philodendron is a reminder of the importance of nurturing our emotional well-being and the connections that enrich our lives.",
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 7,
+          "w": 6
+        },
+        "potSize": 4,
+        "price": 12.99,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 14,
+          "w": 12
+        },
+        "potSize": 8,
+        "price": 19.99,
         "available": false
       },
       "large": {
         "dimensions": {
-          "h": 60,
-          "w": 30
+          "h": 28,
+          "w": 24
         },
-        "potSize": 20,
+        "potSize": 16,
+        "price": 34.99,
         "available": true
       },
       "extraLarge": {
         "dimensions": {
-          "h": 90,
-          "w": 45
+          "h": 42,
+          "w": 36
+        },
+        "potSize": 24,
+        "price": 49.99,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "Chinese Evergreen",
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/Chinese-Evergreen-1.jpg",
+      "/images/Chinese-Evergreen-2.jpg",
+      "/images/Chinese-Evergreen-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Every 2-3 weeks",
+      "soil": "Potting Soil"
+    },
+    "description": "The beautiful Chinese Evergreen is a low-maintenance plant with variegated leaves, tolerating low light and inconsistent watering, making it an excellent choice for beginner plant owners. Its attractive foliage brings a sense of balance and harmony to any space. As a symbol of good luck, prosperity, and long life, the Chinese Evergreen is believed to attract positive energy and ward off misfortune, making it a thoughtful gift or a meaningful addition to your own home.",
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 6,
+          "w": 5
+        },
+        "potSize": 4,
+        "price": 9.99,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 12,
+          "w": 10
+        },
+        "potSize": 8,
+        "price": 14.99,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 24,
+          "w": 20
+        },
+        "potSize": 16,
+        "price": 24.99,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 36,
+          "w": 30
+        },
+        "potSize": 24,
+        "price": 34.99,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 9,
+    "name": "String of Pearls",
+    "family": "Asteraceae",
+    "imgUrls": [
+      "/images/String-of-Pearls-1.jpg",
+      "/images/String-of-Pearls-2.jpg",
+      "/images/String-of-Pearls-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Direct",
+      "water": "Every 2-3 weeks",
+      "soil": "Seed Starting Mix"
+    },
+    "description": "The unique and eye-catching String of Pearls is a trailing succulent with small, round leaves resembling a string of beads. Ideal for hanging baskets or tabletop displays, this drought-tolerant plant thrives in bright, indirect light and requires minimal watering, making it a low-maintenance choice for plant enthusiasts. Symbolizing everlasting love, unity, and protection, the String of Pearls is a charming reminder of the interconnectedness of life and the enduring bonds we share with others.",
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 3,
+          "w": 4
+        },
+        "potSize": 3,
+        "price": 8.99,
+        "available": true
+      },
+      "medium": {
+        "dimensions": {
+          "h": 6,
+          "w": 8
+        },
+        "potSize": 6,
+        "price": 12.99,
+        "available": false
+      },
+      "large": {
+        "dimensions": {
+          "h": 12,
+          "w": 16
+        },
+        "potSize": 12,
+        "price": 19.99,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 18,
+          "w": 24
+        },
+        "potSize": 18,
+        "price": 26.99,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Bird's Nest Fern",
+    "family": "Aspleniaceae",
+    "imgUrls": [
+      "/images/Bird's-Nest-Fern-1.jpg",
+      "/images/Bird's-Nest-Fern-2.jpg",
+      "/images/Bird's-Nest-Fern-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Potting Soil"
+    },
+    "description": "The Bird's Nest Fern is a lush, shade-tolerant plant with wavy, crinkled leaves that form a rosette resembling a bird's nest. Perfect for adding a touch of the tropics to your Indoor space, this attractive plant thrives in low to medium light and prefers consistent moisture. As a symbol of new beginnings, growth, and nurturing, the Bird's Nest Fern serves as a reminder to embrace change and cultivate personal growth, making it an inspiring presence in your home or as a thoughtful gift for loved ones.",
+    "sizes": {
+      "small": {
+        "dimensions": {
+          "h": 9,
+          "w": 6
+        },
+        "potSize": 5,
+        "price": 11.99,
+        "available": false
+      },
+      "medium": {
+        "dimensions": {
+          "h": 18,
+          "w": 12
+        },
+        "potSize": 10,
+        "price": 18.99,
+        "available": true
+      },
+      "large": {
+        "dimensions": {
+          "h": 36,
+          "w": 24
+        },
+        "potSize": 20,
+        "price": 29.99,
+        "available": true
+      },
+      "extraLarge": {
+        "dimensions": {
+          "h": 54,
+          "w": 36
         },
         "potSize": 30,
+        "price": 44.99,
         "available": false
       }
     }

@@ -8,8 +8,6 @@ const initialCart = {
 const CartContext = createContext(initialCart);
 const CartDispatchContext = createContext(null);
 
-console.log(initialCart.items);
-
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(cartReducer, initialCart);
 
@@ -39,13 +37,18 @@ function safeAdd(a, b) {
 }
 
 function cartReducer(cart, action) {
+  //console.log(cart);
   switch (action.type) {
     case "SET_ITEMS":
+      console.log(cart);
       const items = action.payload.items.map((item) => {
         const product = service.getProductById(item.id);
+        const { sizes, ...productWithoutSizes } = product; // Exclude sizes from product
         return {
-          ...product,
+          ...productWithoutSizes, // Use all other details from product
+          options: item.options, // Replace sizes with options from payload
           quantity: item.quantity,
+          price: item.price,
         };
       });
 
@@ -56,8 +59,9 @@ function cartReducer(cart, action) {
       const existingItem = cart.items.find(
         (item) =>
           item.id === action.payload.id &&
-          item.options.size === action.payload.size
+          item.options.size === action.payload.options.size
       );
+
       if (existingItem) {
         existingItem.quantity = safeAdd(existingItem.quantity, 1);
         return {
@@ -67,8 +71,9 @@ function cartReducer(cart, action) {
         let newObject = {
           id: action.payload.id,
           quantity: 1,
+          price: action.payload.price,
           options: {
-            size: action.payload.size,
+            size: action.payload.options.size,
             pot: "No Pot",
           },
         };
@@ -82,8 +87,6 @@ function cartReducer(cart, action) {
       const filteredItems = cart.items.filter(
         (item) => item.id !== action.payload
       );
-      const item = cart.items.find((item) => item.id === action.payload);
-      console.log(cart.items);
       return {
         items: filteredItems,
       };
@@ -93,7 +96,7 @@ function cartReducer(cart, action) {
         items: [],
       };
     case "INCREMENT_QUANTITY":
-      console.log(cart.items);
+      //console.log(cart.items);
       const itemToIncrement = cart.items.find(
         (item) => item.id === action.payload
       );

@@ -61,6 +61,12 @@ const Header = () => {
               anchor="right"
               open={isDrawerOpen}
               onClose={toggleDrawer(false)}
+              PaperProps={{
+                style: {
+                  display: "block",
+                  width: "auto",
+                },
+              }}
             >
               <Cart
                 items={cart}
@@ -98,6 +104,12 @@ const Header = () => {
               anchor="right"
               open={isDrawerOpen}
               onClose={toggleDrawer(false)}
+              PaperProps={{
+                style: {
+                  display: "block",
+                  width: "520px",
+                },
+              }}
             >
               <Cart
                 items={cart}

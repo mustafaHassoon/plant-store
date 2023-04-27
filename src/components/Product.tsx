@@ -18,6 +18,7 @@ import service from "../services";
 const Product = ({
   price,
   id,
+  family,
   title,
   images,
   dimentions,
@@ -25,6 +26,7 @@ const Product = ({
   location,
   conditions,
   soil,
+  description,
 }) => {
   const dispatch = useCartDispatch();
   const cart = useCart();
@@ -40,6 +42,9 @@ const Product = ({
     ([, sizeDetails]) => sizeDetails.available
   )?.[0];
 
+  const firstAvailableSizePrice = productData.sizes[firstAvailableSize]?.price;
+
+  console.log(firstAvailableSizePrice);
   const hasAvailableSize = firstAvailableSize !== undefined;
 
   useEffect(() => {
@@ -100,6 +105,7 @@ const Product = ({
                   dispatch({
                     type: "ADD_ITEM",
                     payload: {
+                      price: firstAvailableSizePrice,
                       id,
                       options: {
                         size: firstAvailableSize,
@@ -120,7 +126,7 @@ const Product = ({
             className={!hasAvailableSize ? classes.hidePrice : ""}
             variant="subtitle1"
           >
-            € {price}
+            € {firstAvailableSizePrice}
           </Typography>
           {!hasAvailableSize && (
             <Typography
@@ -142,6 +148,7 @@ const Product = ({
         product={{
           id,
           title,
+          family,
           price,
           images,
           dimentions,
@@ -150,6 +157,7 @@ const Product = ({
           conditions,
           soil,
           sizes: productData.sizes,
+          description,
         }}
       />
     </React.Fragment>

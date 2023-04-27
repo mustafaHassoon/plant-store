@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme) => ({
     height: 450,
   },
   productDetails: {
-    width: 150,
+    width: 200,
     height: 450,
     display: "flex",
     flexDirection: "column",
@@ -63,24 +63,19 @@ export const useStyles = makeStyles((theme) => ({
     height: 150,
     position: "relative",
   },
-  soilImage: {
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    objectPosition: "center",
-  },
-  productDetailsText: {
+  productDetailsTextContainer: {
     width: 150,
-    height: 300,
+    height: 450,
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start", // Change this from "center" to "flex-start"
-    marginLeft: 10, // Add 10px margin to the left
+    alignItems: "flex-start",
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(3),
   },
   productText: {
-    width: 270,
-    height: 120,
+    width: 350,
+    height: "100%",
   },
   detailsSection: {
     display: "flex",
@@ -89,5 +84,75 @@ export const useStyles = makeStyles((theme) => ({
   },
   sectionTitle: {
     marginBottom: 0,
+  },
+  iconRow: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 50,
+  },
+
+  upperSection: {
+    // Add any desired styling for the upper section
+    height: "80px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  middleSection: {
+    // Add any desired styling for the middle section
+    flexGrow: 1,
+    overflowY: "auto",
+    marginTop: theme.spacing(2),
+    marginRight: theme.spacing(2),
+
+    marginBottom: theme.spacing(2),
+  },
+  lowerSection: {
+    height: "60px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
+  formControl: {
+    width: "90%",
+  },
+
+  buttonWrapper: {
+    height: "100%",
+    width: "100%",
+  },
+
+  buyButton: {
+    height: "100%",
+    width: "100%",
+  },
+
+  titleSubtitleCaption: {
+    marginBottom: theme.spacing(2),
+  },
+  closeButtonContainer: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    backgroundColor: theme.palette.grey[700],
+    borderRadius: 0,
+    minWidth: 0,
+    width: 36,
+    height: 36,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "&:hover": {
+      backgroundColor: theme.palette.grey[800],
+      cursor: "pointer",
+    },
+  },
+  productDetailsText: {
+    marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
 }));

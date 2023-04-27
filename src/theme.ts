@@ -1,11 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 
 export const Colors = {
-  primary: "#228B22", // Forest Green
-  secondary: "#8B4513", // Earthy Brown
-  success: "#32CD32", // Vibrant Green
-  info: "#87CEEB", // Sky Blue
-  danger: "#B22222", // Fiery Red
+  primary: "#CCB42C", // Hokey Pokey
+  secondary: "#FCEC9F", // Golden Glow
+  success: "#1C5C34", // Green Pea
+  info: "#7CB45C", // Chelsea Cucumber
+  danger: "#B3CDA7", // Coriander
   warning: "#FFD700", // Sunflower Yellow
   dark: "#006400", // Deep Forest
   light: "#F5F5DC", // Soft Beige
@@ -31,6 +31,11 @@ const theme = createTheme({
     },
     secondary: {
       main: Colors.secondary,
+    },
+  },
+  typography: {
+    allVariants: {
+      color: "#1C5C34",
     },
   },
 });
