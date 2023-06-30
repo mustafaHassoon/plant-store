@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Pagination from "@mui/material/Pagination";
 import service from "../services";
+import { useFilterContext } from "../context/FilterContext";
 
-export default function ItemsPagination({
-  setProducts,
-  heightFilter,
-  locationFilter,
-  careLevelFilter,
-  sizeFilter,
-  priceRange,
-}) {
+interface ItemsPaginationProps {
+  setPaginationData: (products: any, totalCount: number) => void;
+}
+
+export default function ItemsPagination({ setPaginationData }) {
+  const { filterState } = useFilterContext();
+
   const productsPerPage = 6;
   const [pagination, setPagination] = useState({
     count: 0,
@@ -20,35 +20,45 @@ export default function ItemsPagination({
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [heightFilter, locationFilter, careLevelFilter, sizeFilter]);
-
-  useEffect(() => {
     const from = (currentPage - 1) * productsPerPage;
     const to = from + productsPerPage;
-
+    console.log(from, to);
     service
       .getData(
         { from, to },
-        heightFilter,
-        locationFilter,
-        careLevelFilter,
-        sizeFilter,
-        priceRange
+        filterState.locationFilter,
+        filterState.careLevelFilter,
+        filterState.sizeFilter,
+        filterState.priceRange,
+        filterState.searchText
       )
       .then((response: any) => {
         const data = response.data;
-
-        setProducts(data);
+        console.log(data);
+        setPaginationData(data, response.count); // Pass total count to setPaginationData
         setPagination({ ...pagination, count: response.count });
       });
   }, [
     currentPage,
-    heightFilter,
-    locationFilter,
-    careLevelFilter,
-    sizeFilter,
-    priceRange,
+    filterState.locationFilter,
+    filterState.careLevelFilter,
+    filterState.sizeFilter,
+    filterState.priceRange,
+    filterState.searchText,
+  ]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+    setPagination((prevState) => ({
+      ...prevState,
+      from: 0,
+      to: productsPerPage,
+    }));
+  }, [
+    filterState.locationFilter,
+    filterState.careLevelFilter,
+    filterState.sizeFilter,
+    filterState.searchText,
   ]);
 
   const totalPages = Math.ceil(pagination.count / productsPerPage);

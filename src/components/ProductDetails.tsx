@@ -44,8 +44,6 @@ const ProductDetails = ({ onClose, product, open }) => {
   const dispatch = useCartDispatch();
   const cart = useCart();
 
-  //console.log(cart);
-
   const isInCart = () => {
     return cart.items.some((item) => item.id === product.id);
   };
@@ -63,13 +61,10 @@ const ProductDetails = ({ onClose, product, open }) => {
       const firstAvailableSize = Object.keys(product.sizes).find(
         (size) => product.sizes[size].available
       );
-      //console.log(firstAvailableSize);
       return firstAvailableSize || "";
     }
     return "";
   });
-
-  //console.log(selectedSize);
 
   const [selectedPot, setSelectedPot] = useState("No Pot");
   const handleSizeChange = (event) => {
@@ -109,8 +104,6 @@ const ProductDetails = ({ onClose, product, open }) => {
     });
     console.log("Added to cart with size:", selectedSize);
   };
-
-  //console.log(product);
 
   return (
     <div>

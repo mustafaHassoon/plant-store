@@ -33,9 +33,7 @@ const Product = ({
   const classes = useStyles();
   const [hover, setHover] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-
   const [imgSrc, setImgSrc] = useState(null);
-
   const productData = service.getProductById(id);
 
   const firstAvailableSize = Object.entries(productData.sizes).find(
@@ -44,7 +42,6 @@ const Product = ({
 
   const firstAvailableSizePrice = productData.sizes[firstAvailableSize]?.price;
 
-  console.log(firstAvailableSizePrice);
   const hasAvailableSize = firstAvailableSize !== undefined;
 
   useEffect(() => {

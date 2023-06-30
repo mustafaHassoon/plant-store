@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import service from "../services";
 
 const initialCart = {
@@ -10,6 +10,20 @@ const CartDispatchContext = createContext(null);
 
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(cartReducer, initialCart);
+
+  useEffect(() => {
+    const localData = localStorage.getItem("cartItems");
+    if (localData) {
+      dispatch({
+        type: "SET_ITEMS",
+        payload: { items: JSON.parse(localData) },
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cart.items));
+  }, [cart.items]);
 
   return (
     <CartContext.Provider value={cart}>
@@ -40,7 +54,6 @@ function cartReducer(cart, action) {
   //console.log(cart);
   switch (action.type) {
     case "SET_ITEMS":
-      console.log(cart);
       const items = action.payload.items.map((item) => {
         const product = service.getProductById(item.id);
         const { sizes, ...productWithoutSizes } = product; // Exclude sizes from product

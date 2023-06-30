@@ -9,27 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-
-// const useStyles = makeStyles((theme) => ({
-//     searchButton: {
-//       borderRadius: 0,
-//       borderColor: "transparent",
-//       "&:hover": {
-//         backgroundColor: "transparent",
-//       },
-//       "& .MuiButton-label": {
-//         display: "flex",
-//         justifyContent: "center",
-//       },
-//       "& .MuiButton-startIcon": {
-//         color: theme.palette.primary.main,
-//         "&:hover": {
-//           color: theme.palette.primary.dark,
-//           backgroundColor: "transparent",
-//         },
-//       },
-//     },
-//   }));
+import { useFilterContext } from "../context/FilterContext";
 
 interface DropdownSearchProps {
   isMobile?: boolean;
@@ -38,6 +18,12 @@ interface DropdownSearchProps {
 const DropdownSearch: React.FC<DropdownSearchProps> = ({ isMobile }) => {
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [searchInput, setSearchInput] = useState("");
+  const { handleSearchTextChange } = useFilterContext();
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleSearchTextChange(e.target.value);
+  };
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -73,8 +59,8 @@ const DropdownSearch: React.FC<DropdownSearchProps> = ({ isMobile }) => {
   };
 
   const handleSearchClick = () => {
-    // Handle search click
-    console.log("Search button clicked");
+    handleSearchTextChange(searchInput);
+    handleClose();
   };
   return (
     <React.Fragment>
@@ -100,13 +86,16 @@ const DropdownSearch: React.FC<DropdownSearchProps> = ({ isMobile }) => {
           <TextField
             fullWidth
             variant="outlined"
+            autoFocus
             placeholder="Search…"
+            size="small"
+            onChange={(e) => setSearchInput(e.target.value)}
             InputProps={{
               startAdornment: (
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={handleSearchClick}
                   color="primary"
+                  onClick={handleSearchClick}
                 >
                   <SearchIcon />
                 </IconButton>
@@ -116,6 +105,13 @@ const DropdownSearch: React.FC<DropdownSearchProps> = ({ isMobile }) => {
                 paddingBottom: 0,
                 paddingTop: 0,
               },
+            }}
+            onKeyPress={(ev) => {
+              if (ev.key === "Enter") {
+                // Call your handleSearchClick function when Enter is pressed
+                handleSearchClick();
+                ev.preventDefault();
+              }
             }}
           />
         </Box>
