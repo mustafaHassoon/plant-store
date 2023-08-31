@@ -8,8 +8,9 @@ import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useCart } from "../context/CartContext";
+import Logo from "./Logo";
 
-import { Drawer, Tab, Tabs } from "@material-ui/core";
+import { Drawer, Tab, Tabs, Box } from "@material-ui/core";
 import Cart from "./Cart";
 import { useTheme } from "@mui/material/styles";
 import DropdownSearch from "./DropdownSearch";
@@ -111,46 +112,55 @@ const Header = () => {
             </Drawer>
           </React.Fragment>
         )}
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-        >
-          Plant Store
-        </Typography>
+        <Logo color="secondary" />
         {!isMobile && (
           <React.Fragment>
-            <Tabs value={currentPath}>
-              <Tab label="Home" value="/" component={RouterLink} to="/" />
-              <Tab
-                label="About"
-                value="/about"
-                component={RouterLink}
-                to="/about"
-              />
-              <Tab
-                label="Store"
-                value="/store"
-                component={RouterLink}
-                to="/store"
-              />
-              <Tab
-                label="Find Us"
-                value="/find-us"
-                component={RouterLink}
-                to="/find-us"
-              />
-            </Tabs>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "flex" },
+                justifyContent: "center",
+              }}
+            >
+              <Tabs value={currentPath}>
+                <Tab label="Home" value="/" component={RouterLink} to="/" />
+                <Tab
+                  label="About"
+                  value="/about"
+                  component={RouterLink}
+                  to="/about"
+                />
+                <Tab
+                  label="Store"
+                  value="/store"
+                  component={RouterLink}
+                  to="/store"
+                />
+                <Tab
+                  label="Find Us"
+                  value="/find-us"
+                  component={RouterLink}
+                  to="/find-us"
+                />
+              </Tabs>
+            </Box>
           </React.Fragment>
         )}
-        <DropdownSearch isMobile={isMobile} />
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "flex" },
+            justifyContent: "flex-end",
+          }}
+        >
+          <DropdownSearch isMobile={isMobile} />
 
-        <IconButton color="inherit" onClick={toggleCartDrawer(true)}>
-          <Badge badgeContent={cart.items.length} color="secondary">
-            <ShoppingCartIcon />
-          </Badge>
-        </IconButton>
-
+          <IconButton color="inherit" onClick={toggleCartDrawer(true)}>
+            <Badge badgeContent={cart.items.length} color="secondary">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+        </Box>
         <Drawer
           anchor="right"
           open={isCartDrawerOpen}
@@ -158,11 +168,11 @@ const Header = () => {
           PaperProps={{
             style: {
               display: "block",
-              width: "520px",
+              width: isMobile ? "100vw" : "520px",
             },
           }}
         >
-          <Cart items={cart} onClose={() => setIsCartDrawerOpen(false)} />
+          <Cart items={cart} onClose={toggleCartDrawer(false)} />
         </Drawer>
       </Toolbar>
     </AppBar>

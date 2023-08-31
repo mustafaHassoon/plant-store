@@ -144,7 +144,6 @@ const Store = () => {
           <Grid item xs={false} sm={false} md={2} />
         </Grid>
       </Container>
-      <Footer></Footer>
     </>
   );
 };
