@@ -16,7 +16,7 @@ import { useCart, useCartDispatch } from "../context/CartContext";
 import theme, { Colors } from "../theme";
 import CloseIcon from "@mui/icons-material/Close";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import { useCartStyles } from "./cartStyles.ts"; // Import the useCartStyles hook
+import { useCartStyles } from "./cart.Styles"; // Import the useCartStyles hook
 import { TransitionGroup } from "react-transition-group";
 
 const CloseButtonContainer = styled(Box)(({ theme }) => ({
@@ -44,6 +44,8 @@ export default function Cart({ items, onClose }) {
   const [showItems, setShowItems] = React.useState(true);
 
   React.useEffect(() => {
+    console.log("Cart component mounted. Items:", items);
+
     if (items) dispatch({ type: "SET_ITEMS", payload: items });
   }, []);
 

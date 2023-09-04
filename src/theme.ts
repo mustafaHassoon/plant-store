@@ -1,12 +1,12 @@
 import { createTheme } from "@mui/material/styles";
 
 export const Colors = {
-  primary: "#CCB42C", // Hokey Pokey
-  secondary: "#FCEC9F", // Golden Glow
-  success: "#1C5C34", // Green Pea
+  primary: "#D78B30", // Rustic Amber
+  secondary: "#F5E6C5", // Creamy Beig
+  success: "#F5E6C5", // Green Pea
   info: "#7CB45C", // Chelsea Cucumber
-  danger: "#B3CDA7", // Coriander
-  warning: "#FFD700", // Sunflower Yellow
+  danger: "#F5E6C5", // Coriander
+  warning: "#F5E6C5", // Sunflower Yellow
   dark: "#006400", // Deep Forest
   light: "#F5F5DC", // Soft Beige
   muted: "#77896C", // Willow Green
@@ -33,9 +33,38 @@ const theme = createTheme({
       main: Colors.secondary,
     },
   },
+
   typography: {
-    allVariants: {
-      color: "#1C5C34",
+    fontFamily: '"Fjalla One", sans-serif !important',
+  },
+
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          fontFamily: '"Fjalla One", sans-serif !important',
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          fontFamily: "'Fjalla One', sans-serif !important",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          "&.MuiTab-root": {
+            // Increase specificity by repeating the class
+            fontFamily: '"Fjalla One", sans-serif !important',
+          },
+          wrapper: {
+            fontFamily: "Fjalla One, sans-serif !important",
+          },
+        },
+      },
     },
   },
 });

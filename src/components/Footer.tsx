@@ -10,12 +10,23 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Logo from "./Logo";
+import theme from "../theme";
+import { makeStyles } from "@mui/styles";
+import { Colors } from "../theme";
+
+const useStyles = makeStyles({
+  footerText: {
+    color: `${Colors.gray600} !important`,
+  },
+});
 
 const Footer = () => {
+  const classes = useStyles();
+
   return (
     <Box
       sx={{
-        bgcolor: "background.default",
+        bgcolor: theme.palette.secondary.main,
         color: "text.secondary",
         py: 3,
         position: "fixed",
@@ -34,16 +45,24 @@ const Footer = () => {
           <Grid item xs={12} md={4}>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
               <Link color="inherit" href="#">
-                <Typography variant="body2">About</Typography>
+                <Typography variant="body2" className={classes.footerText}>
+                  About
+                </Typography>
               </Link>
               <Link color="inherit" href="#">
-                <Typography variant="body2">Privacy Policy</Typography>
+                <Typography variant="body2" className={classes.footerText}>
+                  Privacy Policy
+                </Typography>
               </Link>
               <Link color="inherit" href="#">
-                <Typography variant="body2">Terms of Use</Typography>
+                <Typography variant="body2" className={classes.footerText}>
+                  Terms of Use
+                </Typography>
               </Link>
               <Link color="inherit" href="#">
-                <Typography variant="body2">Contact Us</Typography>
+                <Typography variant="body2" className={classes.footerText}>
+                  Contact Us
+                </Typography>
               </Link>
             </Box>
           </Grid>

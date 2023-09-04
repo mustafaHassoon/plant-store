@@ -16,18 +16,18 @@ export const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <CartProvider>
-        <Header></Header>
+    <CartProvider>
+      <Header></Header>
+      <div style={{ marginBottom: "150px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
           <Route path="/find-us" element={<FindUs />} />
         </Routes>
+      </div>
 
-        <Footer></Footer>
-      </CartProvider>
-    </ThemeProvider>
+      <Footer></Footer>
+    </CartProvider>
   );
 };

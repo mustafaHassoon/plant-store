@@ -39,6 +39,13 @@ const useStyles = makeStyles((theme: Theme) => ({
       padding: theme.spacing(2),
     },
   },
+  fixedAndCentered: {
+    //position: "fixed",
+    top: "50%",
+    transform: "translateY(-50%)",
+    right: "10px",
+    zIndex: 1000,
+  },
 }));
 
 const Filters = () => {
@@ -89,354 +96,178 @@ const Filters = () => {
   ];
 
   return (
-    <Paper
-      elevation={3}
-      sx={{
-        padding: 0,
-        margin: "10px auto",
-        maxWidth: "100%",
-        minWidth: "250px",
-        width: "100%",
+    <div
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "10px",
+        zIndex: 1000,
+        width: "250px",
       }}
     >
-      {!isSmallScreen ? (
-        // Render accordion components for medium and large screens
-        <>
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography gutterBottom>Size</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <ToggleButtonGroup
-                value={filterState.sizeFilter}
-                onChange={handleSizeChange}
-                aria-label="size filter"
-              >
-                <ToggleButton
-                  value="small"
-                  aria-label="small"
-                  sx={{ width: "55px" }}
-                >
-                  S
-                </ToggleButton>
-                <ToggleButton
-                  value="medium"
-                  aria-label="medium"
-                  sx={{ width: "55px" }}
-                >
-                  M
-                </ToggleButton>
-                <ToggleButton
-                  value="large"
-                  aria-label="large"
-                  sx={{ width: "55px" }}
-                >
-                  L
-                </ToggleButton>
-                <ToggleButton
-                  value="extraLarge"
-                  aria-label="extra-large"
-                  sx={{ width: "55px" }}
-                >
-                  XL
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography gutterBottom>Location</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Grid m={1} item container sx={{ width: "100%" }}>
-                {/* Location filter */}
-
-                <Grid
-                  item
-                  m={1}
-                  sx={{ width: "250px", justifyContent: "center" }}
-                >
-                  {/* Location filter */}
-                  <ToggleButtonGroup
-                    value={filterState.locationFilter}
-                    onChange={handleLocationChange}
-                    aria-label="location filter"
-                  >
-                    <ToggleButton
-                      value="Indoor"
-                      aria-label="indoor"
-                      style={{ textTransform: "none", fontSize: "0.8rem" }}
-                      className={classes.toggleButton}
-                    >
-                      <RxEnter className={classes.icon} />
-                      Indoor
-                    </ToggleButton>
-                    <ToggleButton
-                      value="Outdoor"
-                      aria-label="outdoor"
-                      style={{ textTransform: "none", fontSize: "0.8rem" }}
-                      className={classes.toggleButton}
-                    >
-                      <RxExit className={classes.icon} />
-                      Outdoor
-                    </ToggleButton>
-                  </ToggleButtonGroup>
-                </Grid>
-              </Grid>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography gutterBottom>Care Level</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Grid item container sx={{ width: "100%" }}>
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>Easy</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.easy}
-                    onChange={handleCareLevelChange}
-                    name="easy"
-                    color="primary"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>Moderate</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.moderate}
-                    onChange={handleCareLevelChange}
-                    name="moderate"
-                    color="primary"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>High</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.high}
-                    onChange={handleCareLevelChange}
-                    name="high"
-                    color="primary"
-                  />
-                </Grid>
-              </Grid>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography id="range-slider" gutterBottom>
-                Price Range
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              {/* Price Range filter */}
-              <Slider
-                value={filterState.priceRange}
-                onChange={(event, newValue) => {
-                  handlePriceRangeChange(event, newValue as number[]);
-                }}
-                min={0}
-                max={100}
-                marks={marks}
-                getAriaValueText={(value) => `$${value}`}
-              />
-            </AccordionDetails>
-          </Accordion>
-        </>
-      ) : (
-        // Render layout for small screens
-        <div>
-          <Button onClick={handleClick} sx={{ width: "100%" }}>
-            <TuneIcon className={classes.icon} />
-            Filters
-          </Button>
-          <Collapse in={open}>
-            <Grid container spacing={1} direction="column">
-              <Grid
-                item
-                m={1}
-                sx={{
-                  width: "100%",
-                  wordWrap: "break-word",
-                  wordBreak: "break-word",
-                  whiteSpace: "normal",
-                }}
-              >
-                <Typography gutterBottom>Size</Typography>
-              </Grid>
-              <Grid item m={0} sx={{ width: "100%", justifyContent: "center" }}>
-                {/* Size filter */}
+      <Paper
+        className={!isSmallScreen ? classes.fixedAndCentered : ""}
+        elevation={3}
+        sx={{
+          padding: 0,
+          margin: "10px auto",
+          maxWidth: "100%",
+          minWidth: "250px",
+          width: "100%",
+        }}
+      >
+        {!isSmallScreen ? (
+          // Render accordion components for medium and large screens
+          <>
+            <Accordion defaultExpanded>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>Size</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
                 <ToggleButtonGroup
                   value={filterState.sizeFilter}
                   onChange={handleSizeChange}
                   aria-label="size filter"
-                  sx={{ width: "100%" }}
                 >
                   <ToggleButton
                     value="small"
                     aria-label="small"
-                    className={classes.toggleButton}
+                    sx={{ width: "55px" }}
                   >
                     S
                   </ToggleButton>
                   <ToggleButton
                     value="medium"
                     aria-label="medium"
-                    className={classes.toggleButton}
+                    sx={{ width: "55px" }}
                   >
                     M
                   </ToggleButton>
                   <ToggleButton
                     value="large"
                     aria-label="large"
-                    className={classes.toggleButton}
+                    sx={{ width: "55px" }}
                   >
                     L
                   </ToggleButton>
                   <ToggleButton
                     value="extraLarge"
                     aria-label="extra-large"
-                    className={classes.toggleButton}
+                    sx={{ width: "55px" }}
                   >
                     XL
                   </ToggleButton>
                 </ToggleButtonGroup>
-              </Grid>
-              <Grid m={0} item container sx={{ width: "100%" }}>
-                {/* Location filter */}
-                <Grid
-                  item
-                  m={1}
-                  sx={{
-                    width: "100%",
-                    wordWrap: "break-word",
-                    wordBreak: "break-word",
-                    whiteSpace: "normal",
-                  }}
-                >
-                  <Typography gutterBottom>Location</Typography>
-                </Grid>
-                <Grid
-                  item
-                  m={0}
-                  sx={{ width: "100%", justifyContent: "center" }}
-                >
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion defaultExpanded>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>Location</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid m={0} item container sx={{ width: "100%" }}>
                   {/* Location filter */}
-                  <ToggleButtonGroup
-                    value={filterState.locationFilter}
-                    onChange={handleLocationChange}
-                    aria-label="location filter"
-                    sx={{ width: "100%" }}
+
+                  <Grid
+                    item
+                    m={1}
+                    sx={{ width: "250px", justifyContent: "center" }}
                   >
-                    <ToggleButton
-                      value="Indoor"
-                      aria-label="indoor"
-                      className={classes.toggleButton}
+                    {/* Location filter */}
+                    <ToggleButtonGroup
+                      value={filterState.locationFilter}
+                      onChange={handleLocationChange}
+                      aria-label="location filter"
                     >
-                      <RxEnter className={classes.icon} />
-                      Indoor
-                    </ToggleButton>
-                    <ToggleButton
-                      value="Outdoor"
-                      aria-label="outdoor"
-                      className={classes.toggleButton}
-                    >
-                      <RxExit className={classes.icon} />
-                      Outdoor
-                    </ToggleButton>
-                  </ToggleButtonGroup>
+                      <ToggleButton
+                        value="Indoor"
+                        aria-label="indoor"
+                        style={{ textTransform: "none", fontSize: "0.8rem" }}
+                        className={classes.toggleButton}
+                      >
+                        <RxEnter className={classes.icon} />
+                        Indoor
+                      </ToggleButton>
+                      <ToggleButton
+                        value="Outdoor"
+                        aria-label="outdoor"
+                        style={{ textTransform: "none", fontSize: "0.8rem" }}
+                        className={classes.toggleButton}
+                      >
+                        <RxExit className={classes.icon} />
+                        Outdoor
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <Grid
-                item
-                m={1}
-                sx={{
-                  width: "100%",
-                  wordWrap: "break-word",
-                  wordBreak: "break-word",
-                  whiteSpace: "normal",
-                }}
-              >
-                <Typography gutterBottom>Care Level</Typography>
-              </Grid>
-              <Grid item m={1} container sx={{ width: "100%" }}>
-                {/* Care Level filter */}
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>Easy</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.easy}
-                    onChange={handleCareLevelChange}
-                    name="easy"
-                    color="primary"
-                  />
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion defaultExpanded>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography>Care Level</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid item container sx={{ width: "100%" }}>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>Easy</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.easy}
+                      onChange={handleCareLevelChange}
+                      name="easy"
+                      color="primary"
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>Moderate</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.moderate}
+                      onChange={handleCareLevelChange}
+                      name="moderate"
+                      color="primary"
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>High</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.high}
+                      onChange={handleCareLevelChange}
+                      name="high"
+                      color="primary"
+                    />
+                  </Grid>
                 </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>Moderate</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.moderate}
-                    onChange={handleCareLevelChange}
-                    name="moderate"
-                    color="primary"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <Typography>High</Typography>
-                  <Checkbox
-                    checked={filterState.careLevelFilter.high}
-                    onChange={handleCareLevelChange}
-                    name="high"
-                    color="primary"
-                  />
-                </Grid>
-              </Grid>
-              <Grid item m={2} sx={{ padding: "20px" }}>
-                <Typography id="range-slider" gutterBottom>
-                  Price Range
-                </Typography>
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion defaultExpanded>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography id="range-slider">Price Range</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                {/* Price Range filter */}
                 <Slider
                   value={filterState.priceRange}
                   onChange={(event, newValue) => {
@@ -447,12 +278,201 @@ const Filters = () => {
                   marks={marks}
                   getAriaValueText={(value) => `$${value}`}
                 />
+              </AccordionDetails>
+            </Accordion>
+          </>
+        ) : (
+          // Render layout for small screens
+          <div>
+            <Button onClick={handleClick} sx={{ width: "100%" }}>
+              <TuneIcon className={classes.icon} />
+              Filters
+            </Button>
+            <Collapse in={open}>
+              <Grid container spacing={1} direction="column">
+                <Grid
+                  item
+                  m={1}
+                  sx={{
+                    width: "100%",
+                    wordWrap: "break-word",
+                    wordBreak: "break-word",
+                    whiteSpace: "normal",
+                  }}
+                >
+                  <Typography gutterBottom>Size</Typography>
+                </Grid>
+                <Grid
+                  item
+                  m={0}
+                  sx={{ width: "100%", justifyContent: "center" }}
+                >
+                  {/* Size filter */}
+                  <ToggleButtonGroup
+                    value={filterState.sizeFilter}
+                    onChange={handleSizeChange}
+                    aria-label="size filter"
+                    sx={{ width: "100%" }}
+                  >
+                    <ToggleButton
+                      value="small"
+                      aria-label="small"
+                      className={classes.toggleButton}
+                    >
+                      S
+                    </ToggleButton>
+                    <ToggleButton
+                      value="medium"
+                      aria-label="medium"
+                      className={classes.toggleButton}
+                    >
+                      M
+                    </ToggleButton>
+                    <ToggleButton
+                      value="large"
+                      aria-label="large"
+                      className={classes.toggleButton}
+                    >
+                      L
+                    </ToggleButton>
+                    <ToggleButton
+                      value="extraLarge"
+                      aria-label="extra-large"
+                      className={classes.toggleButton}
+                    >
+                      XL
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </Grid>
+                <Grid m={0} item container sx={{ width: "100%" }}>
+                  {/* Location filter */}
+                  <Grid
+                    item
+                    m={1}
+                    sx={{
+                      width: "100%",
+                      wordWrap: "break-word",
+                      wordBreak: "break-word",
+                      whiteSpace: "normal",
+                    }}
+                  >
+                    <Typography gutterBottom>Location</Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    m={0}
+                    sx={{ width: "100%", justifyContent: "center" }}
+                  >
+                    {/* Location filter */}
+                    <ToggleButtonGroup
+                      value={filterState.locationFilter}
+                      onChange={handleLocationChange}
+                      aria-label="location filter"
+                      sx={{ width: "100%" }}
+                    >
+                      <ToggleButton
+                        value="Indoor"
+                        aria-label="indoor"
+                        className={classes.toggleButton}
+                      >
+                        <RxEnter className={classes.icon} />
+                        Indoor
+                      </ToggleButton>
+                      <ToggleButton
+                        value="Outdoor"
+                        aria-label="outdoor"
+                        className={classes.toggleButton}
+                      >
+                        <RxExit className={classes.icon} />
+                        Outdoor
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+                  </Grid>
+                </Grid>
+                <Grid
+                  item
+                  m={1}
+                  sx={{
+                    width: "100%",
+                    wordWrap: "break-word",
+                    wordBreak: "break-word",
+                    whiteSpace: "normal",
+                  }}
+                >
+                  <Typography gutterBottom>Care Level</Typography>
+                </Grid>
+                <Grid item m={1} container sx={{ width: "100%" }}>
+                  {/* Care Level filter */}
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>Easy</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.easy}
+                      onChange={handleCareLevelChange}
+                      name="easy"
+                      color="primary"
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>Moderate</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.moderate}
+                      onChange={handleCareLevelChange}
+                      name="moderate"
+                      color="primary"
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                  >
+                    <Typography>High</Typography>
+                    <Checkbox
+                      checked={filterState.careLevelFilter.high}
+                      onChange={handleCareLevelChange}
+                      name="high"
+                      color="primary"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid item m={2} sx={{ padding: "20px" }}>
+                  <Typography id="range-slider" gutterBottom>
+                    Price Range
+                  </Typography>
+                  <Slider
+                    value={filterState.priceRange}
+                    onChange={(event, newValue) => {
+                      handlePriceRangeChange(event, newValue as number[]);
+                    }}
+                    min={0}
+                    max={100}
+                    marks={marks}
+                    getAriaValueText={(value) => `$${value}`}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-          </Collapse>
-        </div>
-      )}
-    </Paper>
+            </Collapse>
+          </div>
+        )}
+      </Paper>
+    </div>
   );
 };
 

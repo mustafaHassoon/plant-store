@@ -64,10 +64,10 @@ const service = {
         if (!priceInRange) {
           return false;
         }
-        //console.log(item);
+
         return true;
       });
-      console.log(from, to);
+
       const data = filteredData.slice(from, to);
 
       resolve({

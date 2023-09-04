@@ -22,7 +22,7 @@ export default function ItemsPagination({ setPaginationData }) {
   useEffect(() => {
     const from = (currentPage - 1) * productsPerPage;
     const to = from + productsPerPage;
-    console.log(from, to);
+
     service
       .getData(
         { from, to },
@@ -34,7 +34,7 @@ export default function ItemsPagination({ setPaginationData }) {
       )
       .then((response: any) => {
         const data = response.data;
-        console.log(data);
+
         setPaginationData(data, response.count); // Pass total count to setPaginationData
         setPagination({ ...pagination, count: response.count });
       });

@@ -97,9 +97,6 @@ const FilterProvider = ({ children }) => {
       ...prevState,
       locationFilter: newValues,
     }));
-    console.log(newValues);
-    console.log(event);
-    console.log(filterState);
   };
 
   const handleCareLevelChange = (

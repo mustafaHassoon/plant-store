@@ -72,18 +72,22 @@ export const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(1),
     marginTop: theme.spacing(3),
+    fontFamily: "'Fjalla One', sans-serif !important",
   },
   productText: {
     width: 350,
     height: "100%",
+    fontFamily: "'Fjalla One', sans-serif !important",
   },
   detailsSection: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    fontFamily: "'Fjalla One', sans-serif !important",
   },
   sectionTitle: {
     marginBottom: 0,
+    fontFamily: "'Fjalla One', sans-serif !important",
   },
   iconRow: {
     display: "flex",
@@ -154,5 +158,6 @@ export const useStyles = makeStyles((theme) => ({
   productDetailsText: {
     marginLeft: theme.spacing(2),
     marginTop: theme.spacing(1),
+    fontFamily: "'Fjalla One', sans-serif !important",
   },
 }));
