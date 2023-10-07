@@ -1,29 +1,35 @@
-import { createContext, useContext, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ChangeEvent,
+  MouseEvent,
+  useCallback,
+} from "react";
+
+type CombinedEvent = ChangeEvent<HTMLInputElement> | MouseEvent<HTMLElement>;
 
 interface FilterContextType {
   filterState: {
-    sizeFilter: any[];
+    sizeFilter: string[];
     heightFilter: number | null;
     locationFilter: string;
     careLevelFilter: { [key: string]: boolean };
     priceRange: number[];
-    searchText: any;
+    searchText: string;
   };
   resetFilters: () => void;
   setFilterState: (state: any) => void;
-  handleSizeChange: (
-    event: React.MouseEvent<HTMLElement>,
-    newSize: string[]
-  ) => void;
+  handleSizeChange: (event: CombinedEvent, newSize: string[]) => void;
   handleHeightChange: (
-    event: React.MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>,
     newHeight: number | null
   ) => void;
-  handleLocationChange: (
-    event: React.MouseEvent<HTMLElement>,
-    newLocation: string[]
+  handleLocationChange: (event: CombinedEvent, newLocation: string) => void;
+  handleCareLevelChange: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    newValue: boolean
   ) => void;
-  handleCareLevelChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handlePriceRangeChange: (
     event: Event,
     newPriceRange: number | number[]
@@ -32,8 +38,6 @@ interface FilterContextType {
 }
 
 const FilterContext = createContext<FilterContextType>({} as FilterContextType);
-
-//: React.FC
 
 const FilterProvider = ({ children }) => {
   const [filterState, setFilterState] = useState({
@@ -49,7 +53,7 @@ const FilterProvider = ({ children }) => {
     searchText: "",
   });
 
-  const resetFilters = () => {
+  const resetFilters = useCallback(() => {
     setFilterState({
       sizeFilter: [],
       heightFilter: null,
@@ -62,61 +66,66 @@ const FilterProvider = ({ children }) => {
       priceRange: [0, 30],
       searchText: "",
     });
-  };
+  }, []);
 
-  // FilterContext.tsx
-  const handlePriceRangeChange = (
-    event: Event,
-    newValue: number | number[]
-  ) => {
-    if (Array.isArray(newValue)) {
+  const handlePriceRangeChange = useCallback(
+    (event: any, newValue: number | number[]) => {
+      if (Array.isArray(newValue)) {
+        setFilterState((prevState) => ({
+          ...prevState,
+          priceRange: newValue,
+        }));
+      }
+    },
+    []
+  );
+
+  const handleSizeChange = useCallback(
+    (event: CombinedEvent, newSize: string[]) => {
+      setFilterState((prevState) => ({ ...prevState, sizeFilter: newSize }));
+    },
+    []
+  );
+
+  const handleHeightChange = useCallback(
+    (event: MouseEvent<HTMLElement>, newHeight: number | null) => {
       setFilterState((prevState) => ({
         ...prevState,
-        priceRange: newValue,
+        heightFilter: newHeight,
       }));
-    }
-  };
+    },
+    []
+  );
 
-  const handleSizeChange = (
-    event: React.MouseEvent<HTMLElement>,
-    newSize: string[]
-  ) => {
-    setFilterState((prevState) => ({ ...prevState, sizeFilter: newSize }));
-  };
+  const handleLocationChange = useCallback(
+    (event: CombinedEvent, newValues: string) => {
+      setFilterState((prevState) => ({
+        ...prevState,
+        locationFilter: newValues,
+      }));
+    },
+    []
+  );
 
-  const handleHeightChange = (
-    event: React.MouseEvent<HTMLElement>,
-    newHeight: number | null
-  ) => {
-    setFilterState((prevState) => ({ ...prevState, heightFilter: newHeight }));
-  };
+  const handleCareLevelChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setFilterState((prevState) => ({
+        ...prevState,
+        careLevelFilter: {
+          ...prevState.careLevelFilter,
+          [event.target.name]: event.target.checked,
+        },
+      }));
+    },
+    []
+  );
 
-  const handleLocationChange = (event, newValues) => {
-    // Assuming newValues is an array of selected locations
-    setFilterState((prevState) => ({
-      ...prevState,
-      locationFilter: newValues,
-    }));
-  };
-
-  const handleCareLevelChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFilterState((prevState) => ({
-      ...prevState,
-      careLevelFilter: {
-        ...prevState.careLevelFilter,
-        [event.target.name]: event.target.checked,
-      },
-    }));
-  };
-
-  const handleSearchTextChange = (newSearchText: string) => {
+  const handleSearchTextChange = useCallback((newSearchText: string) => {
     setFilterState((prevState) => ({
       ...prevState,
       searchText: newSearchText,
     }));
-  };
+  }, []);
 
   return (
     <FilterContext.Provider

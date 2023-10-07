@@ -1,34 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
-  Typography,
-  ToggleButton,
-  ToggleButtonGroup,
-  Checkbox,
-  Slider,
-  Grid,
   Paper as MuiPaper,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   useMediaQuery,
   useTheme,
   styled,
-  Button,
-  Collapse,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Theme } from "@mui/material/styles";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import { useFilterContext } from "../context/FilterContext";
-import { RxExit } from "react-icons/rx";
-import { RxEnter } from "react-icons/rx";
-import TuneIcon from "@mui/icons-material/Tune";
+
 import DesktopFilters from "./Desktop/DesktopFilters";
 import MobileFilters from "./Mobile/MobileFilters";
 import { useFilterStyles } from "./filterStyles";
-import useFiltersHook from ".././hooks/filtersHook";
 
-const Filters = () => {
+const Filters = React.memo(() => {
+  console.log("Filters component rendered");
   const classes = useFilterStyles();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -51,8 +36,6 @@ const Filters = () => {
   const Paper = styled(MuiPaper)(({ theme }) => ({
     padding: 0,
     margin: "10px auto",
-    maxWidth: "100%",
-    minWidth: "250px",
     width: "100%",
   }));
 
@@ -74,38 +57,38 @@ const Filters = () => {
       label: `$${filterState.priceRange[1]}`,
     },
   ];
+  const isOpenedRef = useRef(false);
+  const [, forceUpdate] = useState({});
+
+  const toggleOpen = () => {
+    isOpenedRef.current = !isOpenedRef.current;
+    forceUpdate({});
+  };
 
   return (
     <div
       style={{
-        position: "fixed",
-        top: "50%",
-        left: "10px",
+        position: "sticky",
+        top: "0",
+        width: isSmallScreen ? "100%" : "250px", // conditional width
+        paddingTop: isSmallScreen ? "5%" : "15%", // conditional padding-top
         zIndex: 1000,
-        width: "250px",
       }}
     >
-      <Paper
-        className={!isSmallScreen ? classes.fixedAndCentered : ""}
-        elevation={3}
-        sx={{
-          padding: 0,
-          margin: "10px auto",
-          maxWidth: "100%",
-          minWidth: "250px",
-          width: "100%",
-        }}
-      >
+      <Paper>
         {!isSmallScreen ? (
           // Render accordion components for medium and large screens
           <DesktopFilters />
         ) : (
           // Render layout for small screens
-          <MobileFilters />
+          <MobileFilters
+            isOpened={isOpenedRef.current}
+            toggleOpen={toggleOpen}
+          />
         )}
       </Paper>
     </div>
   );
-};
+});
 
 export default Filters;

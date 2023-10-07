@@ -18,10 +18,17 @@ export const useFilterStyles = makeStyles((theme: Theme) => ({
     },
   },
   fixedAndCentered: {
-    top: "50%",
-    transform: "translateY(-50%)",
-    right: "10px",
+    left: 0,
+    top: "10%", // Adjust according to your needs
+    width: "250px", // Setting a specific width
     zIndex: 1000,
+  },
+  mobileRoot: {
+    width: "100%",
+    margin: "auto",
+    marginTop: theme.spacing(2),
+    boxShadow:
+      "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
   },
   // ... add any other styles you need
 }));

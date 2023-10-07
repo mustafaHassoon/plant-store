@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRef, useEffect } from "react";
+
 import {
   Typography,
   ToggleButton,
@@ -7,48 +9,45 @@ import {
   Slider,
   Grid,
   Paper as MuiPaper,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  useMediaQuery,
-  useTheme,
-  styled,
   Button,
   Collapse,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Theme } from "@mui/material/styles";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useFilterContext } from "../../context/FilterContext";
 
 import { RxExit } from "react-icons/rx";
 import { RxEnter } from "react-icons/rx";
 import TuneIcon from "@mui/icons-material/Tune";
 
-import useSharedLogic from "../../hooks/filtersHook";
-import useStyles from "../Product.styles";
 import useFiltersHook from "../../hooks/filtersHook";
 import { useFilterStyles } from "../filterStyles";
 
-const MobileFilters: React.FC = () => {
+const MobileFilters: React.FC<{
+  isOpened: boolean;
+  toggleOpen: () => void;
+}> = ({ isOpened, toggleOpen }) => {
+  console.log("MobileFilters rendered");
+
   const classes = useFilterStyles();
 
   const {
-    open,
-    handleClick,
     filterState,
     handleSizeChange,
     handleLocationChange,
     handleCareLevelChange,
     handlePriceRangeChange,
   } = useFiltersHook();
+
+  const [tempPriceRange, setTempPriceRange] = useState<number[]>(
+    filterState.priceRange
+  );
+
   return (
-    <div>
-      <Button onClick={handleClick} sx={{ width: "100%" }}>
+    <div className={classes.mobileRoot}>
+      <Button onClick={toggleOpen} sx={{ width: "100%" }}>
         <TuneIcon className={classes.icon} />
         Filters
       </Button>
-      <Collapse in={open}>
+
+      <Collapse in={isOpened}>
         <Grid container spacing={1} direction="column">
           <Grid
             item
@@ -66,7 +65,10 @@ const MobileFilters: React.FC = () => {
             {/* Size filter */}
             <ToggleButtonGroup
               value={filterState.sizeFilter}
-              onChange={handleSizeChange}
+              onChange={(event, newValue) => {
+                // This line wraps the event and value before passing to handleLocationChange
+                handleSizeChange(event as any, newValue);
+              }}
               aria-label="size filter"
               sx={{ width: "100%" }}
             >
@@ -118,7 +120,10 @@ const MobileFilters: React.FC = () => {
               {/* Location filter */}
               <ToggleButtonGroup
                 value={filterState.locationFilter}
-                onChange={handleLocationChange}
+                onChange={(event, newValue) => {
+                  // This line wraps the event and value before passing to handleLocationChange
+                  handleLocationChange(event as any, newValue);
+                }}
                 aria-label="location filter"
                 sx={{ width: "100%" }}
               >
@@ -166,7 +171,10 @@ const MobileFilters: React.FC = () => {
               <Typography>Easy</Typography>
               <Checkbox
                 checked={filterState.careLevelFilter.easy}
-                onChange={handleCareLevelChange}
+                onChange={(event, newValue) => {
+                  // This line wraps the event and value before passing to handleLocationChange
+                  handleCareLevelChange(event as any, newValue);
+                }}
                 name="easy"
                 color="primary"
               />
@@ -182,7 +190,10 @@ const MobileFilters: React.FC = () => {
               <Typography>Moderate</Typography>
               <Checkbox
                 checked={filterState.careLevelFilter.moderate}
-                onChange={handleCareLevelChange}
+                onChange={(event, newValue) => {
+                  // This line wraps the event and value before passing to handleLocationChange
+                  handleCareLevelChange(event as any, newValue);
+                }}
                 name="moderate"
                 color="primary"
               />
@@ -198,7 +209,10 @@ const MobileFilters: React.FC = () => {
               <Typography>High</Typography>
               <Checkbox
                 checked={filterState.careLevelFilter.high}
-                onChange={handleCareLevelChange}
+                onChange={(event, newValue) => {
+                  // This line wraps the event and value before passing to handleLocationChange
+                  handleCareLevelChange(event as any, newValue);
+                }}
                 name="high"
                 color="primary"
               />
@@ -209,9 +223,17 @@ const MobileFilters: React.FC = () => {
               Price Range
             </Typography>
             <Slider
-              value={filterState.priceRange}
+              value={tempPriceRange}
+              valueLabelDisplay="auto"
               onChange={(event, newValue) => {
-                handlePriceRangeChange(event, newValue as number[]);
+                setTempPriceRange(newValue as number[]);
+              }}
+              onChangeCommitted={(event, newValue) => {
+                // Using the CombinedEvent type for handlePriceRangeChange
+                handlePriceRangeChange(
+                  event as unknown as Event,
+                  newValue as number[]
+                );
               }}
               min={0}
               max={100}

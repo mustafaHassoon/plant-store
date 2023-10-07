@@ -3,14 +3,14 @@ import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import { Colors } from "../theme";
 import service from "../services";
-import { Box, Grid, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { useCartDispatch } from "../context/CartContext";
 import { Add, Remove } from "@mui/icons-material";
-import { styled } from "@mui/system";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Slide from "@mui/material/Slide";
 import { useTheme } from "@mui/material/styles";
+import fallbackImage from "../data/fallback.jpg";
 
 import {
   CartItemContainer,
@@ -20,8 +20,10 @@ import {
   ActionsContainer,
   CardMediaStyled,
 } from "./CartItem.styles";
+import React from "react";
 
-export default function CartItem(item) {
+const CartItem = (item) => {
+  //console.log("Props received in CartItem:", item);
   const [product, setProduct] = useState(null);
   const dispatch = useCartDispatch();
   const [exitTransition, setExitTransition] = useState(false);
@@ -33,7 +35,7 @@ export default function CartItem(item) {
         const product = await service.getProductById(item.id);
         setProduct(product);
       } catch (error) {
-        console.error(`Error fetching product with id ${item.id}: ${error}`);
+        //console.error(`Error fetching product with id ${item.id}: ${error}`);
       }
     }
     fetchProduct();
@@ -71,6 +73,7 @@ export default function CartItem(item) {
   }
 
   function handleIncrement(id) {
+    //console.log("Incrementing quantity");
     dispatch({ type: "INCREMENT_QUANTITY", payload: id });
   }
 
@@ -95,8 +98,14 @@ export default function CartItem(item) {
     >
       <CartItemContainer container>
         <LeftColumn item>
-          <CardMediaStyled image={loadedImages[0]} title={item.name} />
+          {/* Conditional rendering to ensure loadedImages[0] exists, otherwise use the fallback */}
+          {loadedImages[0] ? (
+            <CardMediaStyled image={loadedImages[0]} title={item.name} />
+          ) : (
+            <CardMediaStyled image={fallbackImage} title="Fallback Image" />
+          )}
         </LeftColumn>
+
         <MiddleColumn item>
           <div>
             <Typography gutterBottom variant="h6">
@@ -113,6 +122,7 @@ export default function CartItem(item) {
             {`Price: $${(item.price * item.quantity).toFixed(2)}`}
           </Typography>
         </MiddleColumn>
+
         <RightColumn item>
           <ActionsContainer>
             <IconButton
@@ -155,4 +165,8 @@ export default function CartItem(item) {
       </CartItemContainer>
     </Slide>
   );
-}
+};
+
+CartItem.whyDidYouRender = true;
+
+export default React.memo(CartItem);

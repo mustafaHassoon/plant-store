@@ -11,14 +11,10 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Theme } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import useFiltersHook from "../../hooks/filtersHook";
-
 import { RxExit } from "react-icons/rx";
 import { RxEnter } from "react-icons/rx";
-import TuneIcon from "@mui/icons-material/Tune";
 import { useFilterStyles } from "../filterStyles";
 
 const DesktopFilters: React.FC = () => {
@@ -32,6 +28,10 @@ const DesktopFilters: React.FC = () => {
     handleCareLevelChange,
     handlePriceRangeChange,
   } = useFiltersHook();
+  const [tempPriceRange, setTempPriceRange] = useState<number[]>(
+    filterState.priceRange
+  );
+
   return (
     <>
       <Accordion defaultExpanded>
@@ -180,9 +180,16 @@ const DesktopFilters: React.FC = () => {
         <AccordionDetails>
           {/* Price Range filter */}
           <Slider
-            value={filterState.priceRange}
+            value={tempPriceRange}
+            valueLabelDisplay="auto"
             onChange={(event, newValue) => {
-              handlePriceRangeChange(event, newValue as number[]);
+              setTempPriceRange(newValue as number[]);
+            }}
+            onChangeCommitted={(event, newValue) => {
+              handlePriceRangeChange(
+                event as unknown as Event,
+                newValue as number[]
+              );
             }}
             min={0}
             max={100}

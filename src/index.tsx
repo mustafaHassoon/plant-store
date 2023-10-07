@@ -1,3 +1,4 @@
+import "./wdyr";
 import * as React from "react";
 import ReactDOM from "react-dom";
 import CssBaseline from "@mui/material/CssBaseline";

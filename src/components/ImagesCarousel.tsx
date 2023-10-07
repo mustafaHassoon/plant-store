@@ -7,6 +7,7 @@ import service from "../services";
 const CarouselContainer = styled.div`
   width: 100%;
   height: 100%;
+  padding-bottom: 100%; // This will make the height equal to the width, ensuring a square aspect ratio
   position: relative;
   overflow: hidden;
 `;

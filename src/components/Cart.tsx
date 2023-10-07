@@ -37,7 +37,7 @@ const CloseButtonContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export default function Cart({ items, onClose }) {
+const Cart = ({ items, onClose }) => {
   const dispatch = useCartDispatch();
   const cart = useCart();
   const classes = useCartStyles();
@@ -168,4 +168,8 @@ export default function Cart({ items, onClose }) {
       </Container>
     </>
   );
-}
+};
+
+Cart.whyDidYouRender = true;
+
+export default Cart;

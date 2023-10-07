@@ -1,28 +1,24 @@
 import Product from "../components/Product";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 
-import { CartProvider } from "../context/CartContext";
 import { useCart } from "../context/CartContext";
 import ItemsPagination from "../components/ItemsPagination";
 import Grow from "@material-ui/core/Grow";
 import { IconButton, ThemeProvider } from "@mui/material";
-import lightTheme from "../theme";
-import darkTheme from "../theme";
 
 import Typography from "@mui/material/Typography";
 
 import { useFilterContext } from "../context/FilterContext";
 import Filters from "../components/Filters";
 import CloseIcon from "@mui/icons-material/Close";
+import React from "react";
 
 const Store = () => {
   const cart = useCart();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
 
   const [products, setProducts] = useState([]);
@@ -65,16 +61,18 @@ const Store = () => {
   return (
     <>
       <Container maxWidth="xl">
-        <Grid container spacing={3}>
+        <Grid container>
           <Grid item xs={12} sm={4} md={2}>
-            <Filters />
+            <div style={{ position: "relative", height: "100%" }}>
+              <Filters />
+            </div>
           </Grid>
           <Grid item xs={12} sm={8} md={8}>
             <Box
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                p: 1,
+                p: 0,
                 m: 1,
                 justifyContent: "center",
                 alignContent: "center",
@@ -88,8 +86,8 @@ const Store = () => {
                   width="100%"
                   mb={1}
                   mt={1}
-                  ml={6}
-                  mr={6}
+                  ml={0}
+                  mr={0}
                 >
                   <Typography variant="h6">
                     {`${totalCount} result(s) for (${filterState.searchText})`}
@@ -133,7 +131,6 @@ const Store = () => {
                 </Grow>
               ))}
             </Box>
-            {/* <Button onClick={toggleTheme}>Toggle Theme</Button> */}
             <ItemsPagination
               setPaginationData={(products, totalCount) => {
                 setProducts(products);
@@ -148,4 +145,4 @@ const Store = () => {
   );
 };
 
-export default Store;
+export default React.memo(Store);

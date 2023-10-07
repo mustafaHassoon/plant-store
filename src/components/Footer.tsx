@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Grid,
   Box,
@@ -9,14 +10,12 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Logo from "./Logo";
-import theme from "../theme";
+import Logo from "./Logo"; // Make sure you import your Logo component correctly
 import { makeStyles } from "@mui/styles";
-import { Colors } from "../theme";
 
 const useStyles = makeStyles({
   footerText: {
-    color: `${Colors.gray600} !important`,
+    color: "gray",
   },
 });
 
@@ -26,24 +25,37 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        bgcolor: theme.palette.secondary.main,
+        bgcolor: "secondary.main",
         color: "text.secondary",
         py: 3,
-        position: "fixed",
-        bottom: 0,
         width: "100%",
       }}
     >
       <Container maxWidth={false}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems="center">
           <Grid item md={2}></Grid>
-          <Grid item xs={12} md={2}>
-            <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+
+          <Grid item md={2}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
               <Logo color="primary" />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+
+          <Grid item md={4}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
               <Link color="inherit" href="#">
                 <Typography variant="body2" className={classes.footerText}>
                   About
@@ -66,31 +78,35 @@ const Footer = () => {
               </Link>
             </Box>
           </Grid>
-          <Grid item xs={12} md={2}>
-            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+
+          <Grid item md={2}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
               <IconButton
                 color="primary"
-                aria-label="upload picture"
+                aria-label="Facebook"
                 component="span"
               >
                 <FacebookIcon />
               </IconButton>
               <IconButton
                 color="primary"
-                aria-label="upload picture"
+                aria-label="Instagram"
                 component="span"
               >
                 <InstagramIcon />
               </IconButton>
-              <IconButton
-                color="primary"
-                aria-label="upload picture"
-                component="span"
-              >
+              <IconButton color="primary" aria-label="Twitter" component="span">
                 <TwitterIcon />
               </IconButton>
             </Box>
           </Grid>
+
           <Grid item md={2}></Grid>
         </Grid>
       </Container>

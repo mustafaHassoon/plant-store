@@ -4,10 +4,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import MenuItem from "@mui/material/MenuItem";
 import { Link as RouterLink } from "react-router-dom";
-import Logo from "../Logo";
-import { Box } from "@mui/material";
+import Logo from "../Logo"; // Make sure this import works in your setup
+import { Badge, Grid } from "@mui/material";
+import DropdownSearch from "../DropdownSearch"; // Make sure this import works in your setup
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 type MobileHeaderProps = {
+  cart: any;
+  isMobile: boolean;
+  toggleCartDrawer: (
+    open: boolean
+  ) => (event: React.KeyboardEvent | React.MouseEvent) => void;
   toggleNavDrawer: (
     open: boolean
   ) => (event: React.KeyboardEvent | React.MouseEvent) => void;
@@ -16,33 +23,51 @@ type MobileHeaderProps = {
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({
   toggleNavDrawer,
+  toggleCartDrawer,
+  isMobile,
+  cart,
   isNavDrawerOpen,
 }) => {
   return (
     <>
-      <IconButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
-        onClick={toggleNavDrawer(true)}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        <Logo color="secondary" showText={false} />
-      </Box>
+      <Grid container alignItems="center">
+        <Grid item xs={4} container justifyContent="center" alignItems="center">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleNavDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Grid>
+        <Grid item xs={4} container justifyContent="center" alignItems="center">
+          <Logo color="secondary" showText={false} />
+        </Grid>
+        <Grid item xs={4} container justifyContent="center" alignItems="center">
+          <DropdownSearch isMobile={isMobile} />
+          <IconButton color="inherit" onClick={toggleCartDrawer(true)}>
+            <Badge badgeContent={cart.items.length} color="secondary">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+        </Grid>
+      </Grid>
+
       <Drawer
-        anchor="right"
+        anchor="left"
         open={isNavDrawerOpen}
         onClose={toggleNavDrawer(false)}
+        PaperProps={{
+          style: {
+            width: "60vw",
+          },
+          sx: {
+            "& .MuiMenuItem-root": {
+              justifyContent: "center",
+            },
+          },
+        }}
       >
         <MenuItem
           component={RouterLink}
