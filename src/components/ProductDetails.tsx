@@ -1,35 +1,46 @@
-import { Dialog } from "@material-ui/core";
+import { Dialog } from "@mui/material";
 import DesktopProductDetails from "./Desktop/DesktopProductDetails";
 import MobileProductDetails from "./Mobile/MobileProductDetails";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
-import { useStyles } from "./ProductDetailsStyles";
+import { createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 1000, // custom value for md
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
 
 const ProductDetails = ({ onClose, product, open }) => {
-  const classes = useStyles();
-  const theme = useTheme();
+  console.log(theme.breakpoints.values.sm);
+
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <div>
       <Dialog
-        PaperProps={{ className: classes.dialog }}
-        fullScreen={isMobile}
         open={open}
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
       >
-        {isMobile ? (
+        {useMediaQuery(theme.breakpoints.down("md")) ? (
           <MobileProductDetails
             product={product}
             onClose={onClose}
             open={open}
+            isMobile={isMobile}
           />
         ) : (
           <DesktopProductDetails
             product={product}
             onClose={onClose}
             open={open}
+            isMobile={isMobile}
           />
         )}
       </Dialog>

@@ -10,11 +10,8 @@ import { useFilterContext } from "../context/FilterContext";
 
 import DesktopFilters from "./Desktop/DesktopFilters";
 import MobileFilters from "./Mobile/MobileFilters";
-import { useFilterStyles } from "./filterStyles";
 
 const Filters = React.memo(() => {
-  console.log("Filters component rendered");
-  const classes = useFilterStyles();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -39,13 +36,7 @@ const Filters = React.memo(() => {
     width: "100%",
   }));
 
-  const {
-    filterState,
-    handleSizeChange,
-    handleLocationChange,
-    handleCareLevelChange,
-    handlePriceRangeChange,
-  } = useFilterContext();
+  const { filterState } = useFilterContext();
 
   const marks = [
     {

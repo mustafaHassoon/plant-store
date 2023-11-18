@@ -6,17 +6,19 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import ImagesCarousel from "../ImagesCarousel";
 
-import { useStyles } from "../ProductDetailsStyles";
+import { useProductDetailsMobileStyles } from "../MobileProductDetailsStyles";
 import ProductButtons from "../ProductButtons";
 import ProductTitle from "../ProductTitle";
 import ProductDescription from "../ProductDescription";
 
 import ProductDetailsSpecifications from "../ProductDetailsSpecifications";
+import { Grid } from "@mui/material";
 
-const MobileProductDetails = ({ product, onClose, open }) => {
-  const classes = useStyles();
+const MobileProductDetails = ({ product, onClose, open, isMobile }) => {
+  const classes = useProductDetailsMobileStyles();
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  //const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isFullScreen = useMediaQuery("(max-width: 999px)");
 
   const {
     selectedSize,
@@ -30,30 +32,47 @@ const MobileProductDetails = ({ product, onClose, open }) => {
   return (
     <Dialog
       PaperProps={{ className: classes.dialog }}
-      fullScreen={fullScreen}
+      fullScreen={isFullScreen}
       open={open}
       onClose={onClose}
       aria-labelledby="responsive-dialog-title"
     >
-      <Box className={classes.mobileContainer}>
-        <ProductTitle product={product} onClose={onClose} />
-        <ImagesCarousel productId={product.id} />
-        <ProductDetailsSpecifications
-          product={product}
-          selectedSize={selectedSize}
-        />
-        <ProductDescription product={product} />
-        <ProductButtons
-          product={product}
-          selectedSize={selectedSize}
-          selectedPot={selectedPot}
-          handleSizeChange={handleSizeChange}
-          handlePotChange={selectedPot}
-          handleAddToCart={handleAddToCart}
-          handleRemoveFromCart={handleRemoveFromCart}
-          isInCart={isInCart}
-        />
-      </Box>
+      <Grid container spacing={2} direction="column" alignItems="center">
+        {" "}
+        {/* Main container grid */}
+        <Grid item className={classes.productTitleItem}>
+          <ProductTitle
+            product={product}
+            onClose={onClose}
+            isMobile={isMobile}
+            selectedSize={selectedSize}
+          />
+        </Grid>
+        <Grid item className={classes.customDimension}>
+          <ImagesCarousel productId={product.id} />
+        </Grid>
+        <Grid item>
+          <ProductDetailsSpecifications
+            product={product}
+            selectedSize={selectedSize}
+            isMobile={isMobile}
+          />
+        </Grid>
+        <Grid item>
+          <ProductDescription product={product} isMobile={isMobile} />
+        </Grid>
+        <Grid item>
+          <ProductButtons
+            product={product}
+            selectedSize={selectedSize}
+            handleSizeChange={handleSizeChange}
+            handleAddToCart={handleAddToCart}
+            handleRemoveFromCart={handleRemoveFromCart}
+            isInCart={isInCart}
+            isMobile={isMobile}
+          />
+        </Grid>
+      </Grid>
     </Dialog>
   );
 };

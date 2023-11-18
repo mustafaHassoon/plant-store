@@ -1,14 +1,19 @@
-import { Box, Typography } from "@material-ui/core";
-import { useStyles } from "./ProductDetailsStyles";
+import { Box, Typography } from "@mui/material";
+import { useProductDetailsDesktopStyles } from "./DesktopProductDetailsStyles";
+import { useProductDetailsMobileStyles } from "./MobileProductDetailsStyles";
 
-const ProductDescription = ({ product }) => {
-  const classes = useStyles();
+const ProductDescription = ({ product, isMobile }) => {
+  const desktopClasses = useProductDetailsDesktopStyles();
+  const mobileClasses = useProductDetailsMobileStyles();
+  const classes = (isMobile ? mobileClasses : desktopClasses) as any;
 
   return (
     <>
       <Box className={classes.productDescription}>
-        {/* Add your description here */}
-        <Typography variant="body2">{product.description}</Typography>
+        {/* description */}
+        <Typography variant="body2" sx={{ marginLeft: 2, marginRight: 2 }}>
+          {product.description}
+        </Typography>
       </Box>
     </>
   );

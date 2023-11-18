@@ -6,52 +6,43 @@ import {
   Select,
   MenuItem,
   Box,
-} from "@material-ui/core";
+} from "@mui/material";
 import { FavoriteBorder } from "@mui/icons-material";
-import { useStyles } from "./ProductDetailsStyles";
+import { useProductDetailsDesktopStyles } from "./DesktopProductDetailsStyles";
+import { useProductDetailsMobileStyles } from "./MobileProductDetailsStyles";
 
 const ProductButtons = ({
   product,
   selectedSize,
-  selectedPot,
   handleSizeChange,
-  handlePotChange,
   handleAddToCart,
   handleRemoveFromCart,
   isInCart,
+  isMobile,
 }) => {
-  const classes = useStyles();
+  const desktopClasses = useProductDetailsDesktopStyles();
+  const mobileClasses = useProductDetailsMobileStyles();
+  const classes = (isMobile ? mobileClasses : desktopClasses) as any;
 
   return (
     <>
-      <Grid container className={classes.productButtons}>
+      <Grid container className={classes.productButtons} alignItems="center">
         {/* Add the size and pot selection */}
         {product && product.sizes && Object.keys(product.sizes).length > 0 && (
           <>
-            <Grid item xs={4}>
+            <Grid
+              item
+              xs={5}
+              component={Box}
+              height="100%"
+              width="100%"
+              className={classes.gridItemCentered}
+            >
               <FormControl
-                size="small"
+                size="medium"
                 variant="outlined"
-                className={classes.formControl}
-              >
-                <InputLabel>Pot</InputLabel>
-                <Select
-                  label="Pot"
-                  value={selectedPot}
-                  onChange={handlePotChange}
-                >
-                  {/* Add your pot options here */}
-                  <MenuItem value={"No Pot"}>No Pot</MenuItem>
-                  <MenuItem value={"Standard Pot"}>Standard Pot</MenuItem>
-                  <MenuItem value={"Deluxe Pot"}>Deluxe Pot</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={4}>
-              <FormControl
-                size="small"
-                variant="outlined"
-                className={classes.formControl}
+                className={classes.buyButton}
+                // fullWidth
               >
                 <InputLabel>Size</InputLabel>
                 <Select
@@ -71,12 +62,26 @@ const ProductButtons = ({
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={2} component={Box} height="100%" width="100%">
+            <Grid
+              item
+              xs={3}
+              component={Box}
+              height="100%"
+              width="100%"
+              className={classes.gridItemCentered}
+            >
               <Button className={classes.buyButton} fullWidth>
                 <FavoriteBorder />
               </Button>
             </Grid>
-            <Grid item xs={2} component={Box} height="100%" width="100%">
+            <Grid
+              item
+              xs={4}
+              component={Box}
+              height="100%"
+              width="100%"
+              className={classes.gridItemCentered}
+            >
               <Button
                 className={classes.buyButton}
                 onClick={isInCart() ? handleRemoveFromCart : handleAddToCart}

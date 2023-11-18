@@ -14,6 +14,29 @@ const service = {
   ) => {
     return new Promise((resolve, reject) => {
       const filteredData = products.filter((item) => {
+        const hasNoAvailableSizes = !Object.values(item.sizes).some(
+          (size) => size.available
+        );
+
+        // Check if any filter is active
+        const isAnyFilterActive =
+          searchText ||
+          locationFilter.length > 0 ||
+          careLevelFilter.easy ||
+          careLevelFilter.moderate ||
+          careLevelFilter.high ||
+          sizeFilter.length > 0;
+
+        // Exclude out-of-stock products when any filter is active
+        if (isAnyFilterActive && hasNoAvailableSizes) {
+          return false;
+        }
+
+        // When sizeFilter is not applied, include products with no available sizes
+        if (sizeFilter.length === 0 && hasNoAvailableSizes) {
+          return true;
+        }
+
         if (
           searchText &&
           !(
@@ -66,6 +89,22 @@ const service = {
         }
 
         return true;
+      });
+
+      filteredData.sort((a, b) => {
+        const aAvailable = Object.values(a.sizes).some(
+          (size) => size.available
+        );
+        const bAvailable = Object.values(b.sizes).some(
+          (size) => size.available
+        );
+
+        if (aAvailable && !bAvailable) {
+          return -1; // a comes first
+        } else if (!aAvailable && bAvailable) {
+          return 1; // b comes first
+        }
+        return 0; // no change in order
       });
 
       const data = filteredData.slice(from, to);

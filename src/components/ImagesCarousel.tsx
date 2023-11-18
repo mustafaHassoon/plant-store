@@ -4,11 +4,29 @@ import styled from "styled-components";
 import { BeatLoader } from "react-spinners";
 import service from "../services";
 
+const sizes = {
+  mobile: 500,
+  tablet: 900,
+};
+
+const device = {
+  mobile: `(max-width: ${sizes.mobile}px)`,
+  tablet: `(max-width: ${sizes.tablet}px)`,
+};
+
 const CarouselContainer = styled.div`
+  max-width: 600px; // Ensure the width is no more than 600px
+  max-height: 600px; // Ensure the height is no more than 600px
   width: 100%;
   height: 100%;
   padding-bottom: 100%; // This will make the height equal to the width, ensuring a square aspect ratio
   position: relative;
+  overflow: hidden;
+`;
+
+const OuterContainer = styled.div`
+  width: 100%;
+  max-height: 600px;
   overflow: hidden;
 `;
 
@@ -27,6 +45,7 @@ const DotWrapperContainer = styled.div`
   left: 0;
   right: 0;
   padding-bottom: 10px;
+  objectfit: "cover";
 `;
 
 const Dot = styled.div<{ active: boolean }>`
@@ -38,7 +57,7 @@ const Dot = styled.div<{ active: boolean }>`
     active ? "rgba(0, 191, 255, 0.5)" : "rgba(255, 255, 255, 0.3)"};
   transition: background-color 200ms;
   cursor: pointer;
-  pointer-events: all; // To enable click events on the dots
+  pointer-events: all;
 `;
 
 interface ImagesCarouselProps {
@@ -54,8 +73,9 @@ const ImagesCarousel: React.FC<ImagesCarouselProps> = ({
 }) => {
   const [active, setActive] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-
   const [loadedImages, setLoadedImages] = useState<Array<string | null>>([]);
+
+  const windowWidth = window.innerWidth;
 
   useEffect(() => {
     const loadImages = async () => {
@@ -119,10 +139,11 @@ const ImagesCarousel: React.FC<ImagesCarouselProps> = ({
           onLoad={handleImageLoad}
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "100%",
+            maxHeight: "100%",
             objectFit: "cover",
             opacity: index === active && !isLoading ? 1 : 0,
             transition: `opacity ${duration}ms`,

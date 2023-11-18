@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useRef, useEffect } from "react";
 
 import {
   Typography,

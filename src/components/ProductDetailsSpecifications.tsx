@@ -1,4 +1,4 @@
-import { Typography, Box } from "@material-ui/core";
+import { Typography, Box } from "@mui/material";
 
 import { MdHeight } from "react-icons/md";
 import { RxWidth } from "react-icons/rx";
@@ -11,17 +11,21 @@ import { RiHandHeartLine } from "react-icons/ri";
 import { TiWeatherSunny } from "react-icons/ti";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 
-import { useStyles } from "./ProductDetailsStyles";
+import { useProductDetailsDesktopStyles } from "./DesktopProductDetailsStyles";
+import { useProductDetailsMobileStyles } from "./MobileProductDetailsStyles";
 
 interface ProductDetailsSpecificationsProps {
   product: any;
   selectedSize: string;
+  isMobile: any;
 }
 
 const ProductDetailsSpecifications: React.FC<
   ProductDetailsSpecificationsProps
-> = ({ product, selectedSize }) => {
-  const classes = useStyles();
+> = ({ product, selectedSize, isMobile }) => {
+  const desktopClasses = useProductDetailsDesktopStyles();
+  const mobileClasses = useProductDetailsMobileStyles();
+  const classes = (isMobile ? mobileClasses : desktopClasses) as any;
   const renderBrightnessIcon = () => {
     if (
       product.conditions.light_amount === "Bright" ||

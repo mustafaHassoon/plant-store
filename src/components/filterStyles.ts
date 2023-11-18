@@ -19,8 +19,8 @@ export const useFilterStyles = makeStyles((theme: Theme) => ({
   },
   fixedAndCentered: {
     left: 0,
-    top: "10%", // Adjust according to your needs
-    width: "250px", // Setting a specific width
+    top: "10%",
+    width: "250px",
     zIndex: 1000,
   },
   mobileRoot: {

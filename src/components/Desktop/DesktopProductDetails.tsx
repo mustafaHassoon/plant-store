@@ -6,16 +6,16 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import ImagesCarousel from "../ImagesCarousel";
 
-import { useStyles } from "../ProductDetailsStyles";
+import { useProductDetailsDesktopStyles } from "../DesktopProductDetailsStyles";
 import ProductButtons from "../ProductButtons";
 import ProductDetailsSpecifications from "../ProductDetailsSpecifications";
 import ProductTitle from "../ProductTitle";
 import ProductDescription from "../ProductDescription";
 
-const DesktopProductDetails = ({ onClose, product, open }) => {
-  const classes = useStyles();
+const DesktopProductDetails = ({ onClose, product, open, isMobile }) => {
+  const classes = useProductDetailsDesktopStyles();
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  //const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const {
     selectedSize,
@@ -30,7 +30,7 @@ const DesktopProductDetails = ({ onClose, product, open }) => {
     <div>
       <Dialog
         PaperProps={{ className: classes.dialog }}
-        fullScreen={fullScreen}
+        //fullScreen={fullScreen}
         open={open}
         onClose={onClose}
         aria-labelledby="responsive-dialog-title"
@@ -43,6 +43,7 @@ const DesktopProductDetails = ({ onClose, product, open }) => {
             <ProductDetailsSpecifications
               product={product}
               selectedSize={selectedSize}
+              isMobile={isMobile}
             />
           </Box>
 
@@ -54,17 +55,21 @@ const DesktopProductDetails = ({ onClose, product, open }) => {
               justifyContent="space-between"
               height="100%"
             >
-              <ProductTitle product={product} onClose={onClose} />
-              <ProductDescription product={product} />
+              <ProductTitle
+                product={product}
+                onClose={onClose}
+                isMobile={isMobile}
+                selectedSize={selectedSize}
+              />
+              <ProductDescription product={product} isMobile={isMobile} />
               <ProductButtons
                 product={product}
                 selectedSize={selectedSize}
-                selectedPot={selectedPot}
                 handleSizeChange={handleSizeChange}
-                handlePotChange={selectedPot}
                 handleAddToCart={handleAddToCart}
                 handleRemoveFromCart={handleRemoveFromCart}
                 isInCart={isInCart}
+                isMobile={isMobile}
               />
             </Box>
           </Box>

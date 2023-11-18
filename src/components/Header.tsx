@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Badge from "@mui/material/Badge";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useCart } from "../context/CartContext";
-import { Grid, Drawer, Box, IconButton } from "@material-ui/core";
-import DropdownSearch from "./DropdownSearch";
+import { Grid, Drawer } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import theme from "../theme";
 import MobileHeader from "./Mobile/MobileHeader";
 import DesktopHeader from "./Desktop/DesktopHeader";
-import Logo from "./Logo";
 import { useHeaderStyles } from "./Header.style";
 import Cart from "./Cart";
 
@@ -79,7 +75,10 @@ const Header = () => {
         PaperProps={{
           style: {
             display: "block",
-            width: isMobile ? "100vw" : "520px",
+            maxWidth: isMobile ? "100%" : "520px",
+            minWidth: isMobile ? "100%" : "520px",
+            boxSizing: "border-box",
+            overflowX: "hidden",
           },
         }}
       >

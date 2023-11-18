@@ -4,11 +4,9 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-
-import { useCart } from "../context/CartContext";
 import ItemsPagination from "../components/ItemsPagination";
-import Grow from "@material-ui/core/Grow";
-import { IconButton, ThemeProvider } from "@mui/material";
+import { Grow } from "@mui/material";
+import { IconButton } from "@mui/material";
 
 import Typography from "@mui/material/Typography";
 
@@ -18,7 +16,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import React from "react";
 
 const Store = () => {
-  const cart = useCart();
   const [totalCount, setTotalCount] = useState(0);
 
   const [products, setProducts] = useState([]);
@@ -61,7 +58,7 @@ const Store = () => {
   return (
     <>
       <Container maxWidth="xl">
-        <Grid container>
+        <Grid container style={{ paddingBottom: "100px" }}>
           <Grid item xs={12} sm={4} md={2}>
             <div style={{ position: "relative", height: "100%" }}>
               <Filters />
@@ -131,15 +128,15 @@ const Store = () => {
                 </Grow>
               ))}
             </Box>
-            <ItemsPagination
-              setPaginationData={(products, totalCount) => {
-                setProducts(products);
-                setTotalCount(totalCount);
-              }}
-            />
           </Grid>
           <Grid item xs={false} sm={false} md={2} />
         </Grid>
+        <ItemsPagination
+          setPaginationData={(products, totalCount) => {
+            setProducts(products);
+            setTotalCount(totalCount);
+          }}
+        />
       </Container>
     </>
   );

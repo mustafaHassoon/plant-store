@@ -6,18 +6,15 @@ import {
   Container,
   Divider,
   Grid,
-  Slide,
   Typography,
-  makeStyles,
   styled,
 } from "@mui/material";
 import CartItem from "./CartItem";
 import { useCart, useCartDispatch } from "../context/CartContext";
-import theme, { Colors } from "../theme";
+import { Colors } from "../theme";
 import CloseIcon from "@mui/icons-material/Close";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import { useCartStyles } from "./cart.Styles"; // Import the useCartStyles hook
-import { TransitionGroup } from "react-transition-group";
+import { useCartStyles } from "./cart.Styles";
 
 const CloseButtonContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -63,14 +60,15 @@ const Cart = ({ items, onClose }) => {
           <CloseIcon style={{ color: "white" }} />
         </CloseButtonContainer>
       </Box>
-      <Container maxWidth="sm">
+      <Container>
         <Box
           display="flex"
           flexDirection="column"
           justifyContent="space-between"
           overflow="none"
           height="100%"
-          maxHeight="calc(100% - 56px)" // Adjust this value depending on the height of the buttons section
+          maxHeight="calc(100% - 56px)"
+          maxWidth="500px"
         >
           <Grid container spacing={0}>
             <Grid item xs={12}>
@@ -122,26 +120,29 @@ const Cart = ({ items, onClose }) => {
           </Grid>
         </Box>
         <Box
+          overflow="none"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
           padding={1}
-          bgcolor="#fff"
           width="100%"
           bottom={0}
-          height={156} // Set a fixed height for the buttons section
+          height={156}
         >
           <Box
             sx={{
               position: "fixed",
               bottom: 0,
-              width: "450px",
+
+              width: "inherit",
+              maxWidth: "500px",
+
               height: "64px",
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               alignItems: "center",
-              padding: 2,
+              padding: 3,
               backgroundColor: "white",
               borderTop: "1px solid",
               borderColor: "divider",
@@ -152,6 +153,7 @@ const Cart = ({ items, onClose }) => {
               color="primary"
               onClick={handleEmptyCart}
               startIcon={<ClearAllIcon />}
+              sx={{ margin: "0 8px" }}
             >
               Empty Cart
             </Button>
@@ -159,7 +161,7 @@ const Cart = ({ items, onClose }) => {
               variant="contained"
               color="primary"
               onClick={onClose}
-              sx={{ backgroundColor: Colors.primary }}
+              sx={{ backgroundColor: Colors.primary, margin: "0 8px" }}
             >
               Continue Shopping
             </Button>

@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 export const Colors = {
   primary: "#D78B30", // Rustic Amber
   secondary: "#F5E6C5", // Creamy Beig
-  success: "#F5E6C5", // Green Pea
+  success: "#F5E6C5", // Green Peas
   info: "#7CB45C", // Chelsea Cucumber
   danger: "#F5E6C5", // Coriander
   warning: "#F5E6C5", // Sunflower Yellow
@@ -35,80 +35,76 @@ const theme = createTheme({
   },
 
   typography: {
-    fontFamily: '"Fjalla One", sans-serif !important',
+    fontFamily: '"Fjalla One", sans-serif', // Set the global font family
+    // h1: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h1
+    // },
+    // h2: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h2
+    // },
+    // h3: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h3
+    // },
+    // h4: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h4
+    // },
+    // h5: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h5
+    // },
+    // h6: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to h6
+    // },
+    // subtitle1: {
+    //   fontFamily: '"Fjalla One", sans-serif',
+    //   //... other styles specific to subtitle1
+    // },
+    // ... continue for other typography variants
   },
 
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          fontFamily: '"Fjalla One", sans-serif !important',
-        },
-      },
-    },
-    MuiButtonBase: {
-      styleOverrides: {
-        root: {
-          fontFamily: "'Fjalla One', sans-serif !important",
-        },
-      },
-    },
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          "&.MuiTab-root": {
-            // Increase specificity by repeating the class
-            fontFamily: '"Fjalla One", sans-serif !important',
-          },
-          wrapper: {
-            fontFamily: "Fjalla One, sans-serif !important",
-          },
-        },
-      },
-    },
+    // MuiCssBaseline: {
+    //   styleOverrides: {
+    //     body: {
+    //       fontFamily: '"Fjalla One", sans-serif',
+    //     },
+    //   },
+    // },
+    // MuiButtonBase: {
+    //   styleOverrides: {
+    //     root: {
+    //       fontFamily: "'Fjalla One', sans-serif",
+    //     },
+    //   },
+    // },
+    // MuiTab: {
+    //   styleOverrides: {
+    //     root: {
+    //       "&.MuiTab-root": {
+    //         // Increase specificity by repeating the class
+    //         fontFamily: '"Fjalla One", sans-serif ',
+    //       },
+    //       wrapper: {
+    //         fontFamily: "Fjalla One, sans-serif ",
+    //       },
+    //     },
+    //   },
+    // },
+    // MuiTypography: {
+    //   styleOverrides: {
+    //     root: {
+    //       "&.MuiTypography-h6": {
+    //         fontFamily: '"Fjalla One", sans-serif ',
+    //       },
+    //     },
+    //   },
+    // },
   },
 });
 
 export default theme;
-
-const lightTheme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: Colors.primary,
-    },
-    secondary: {
-      main: Colors.secondary,
-    },
-    background: {
-      default: Colors.light,
-      paper: Colors.gray100,
-    },
-    text: {
-      primary: Colors.gray900,
-      secondary: Colors.gray600,
-    },
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: Colors.primary,
-    },
-    secondary: {
-      main: Colors.secondary,
-    },
-    background: {
-      default: Colors.dark, // Set the default background color to Colors.dark
-      paper: Colors.gray900, // Set the paper background color to a darker gray
-    },
-    text: {
-      primary: Colors.light, // Set the primary text color to Colors.light
-      secondary: Colors.gray300, // Set the secondary text color to a lighter gray
-    },
-  },
-});
-
-export { lightTheme, darkTheme };

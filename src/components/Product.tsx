@@ -1,17 +1,21 @@
 // Product.tsx
 import React, { useEffect, useState } from "react";
+
 import {
   Card,
   CardMedia,
   CardContent,
   Typography,
-  Button,
-  IconButton,
   Box,
-} from "@material-ui/core";
+  Paper,
+} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import useStyles from "./Product.styles";
-import { useCart, useCartDispatch } from "../context/CartContext";
+import Favorite from "@mui/icons-material/Favorite"; // Import the filled icon
+
+import useStyles from "./productStyles";
+import { useCartDispatch } from "../context/CartContext";
 import ProductDetails from "./ProductDetails";
 import service from "../services";
 
@@ -29,7 +33,6 @@ const Product = ({
   description,
 }) => {
   const dispatch = useCartDispatch();
-  const cart = useCart();
   const classes = useStyles();
   const [hover, setHover] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -43,6 +46,8 @@ const Product = ({
   const firstAvailableSizePrice = productData.sizes[firstAvailableSize]?.price;
 
   const hasAvailableSize = firstAvailableSize !== undefined;
+
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const loadImage = async () => {
@@ -62,7 +67,7 @@ const Product = ({
   };
   return (
     <React.Fragment>
-      <Card className={classes.root}>
+      <Box className={classes.myRoot}>
         <div
           className={`${classes.imageContainer} ${
             hover ? classes.imageContainerHover : ""
@@ -75,46 +80,47 @@ const Product = ({
               !hasAvailableSize ? classes.fadedImage : ""
             }`}
             image={imgSrc}
-            title="uuuuuuu"
+            title={title}
             onClick={handleOpenDetails}
             style={{ cursor: "pointer" }}
-          />
-          <IconButton
-            className={`${classes.favoriteButton} ${
-              hover ? classes.showFavoriteButton : ""
-            }`}
-            edge="end"
-            color="inherit"
-            aria-label="Favorite"
           >
-            <FavoriteBorder />
-          </IconButton>
+            <IconButton
+              classes={{
+                root: `${classes.favoriteButton} ${
+                  isFavorite || hover ? classes.showFavoriteButton : ""
+                }`,
+              }}
+              aria-label="Add to favorites"
+              onClick={(event) => {
+                event.stopPropagation(); // Prevents the click from propagating to the parent
+                setIsFavorite(!isFavorite);
+              }}
+            >
+              {isFavorite ? <Favorite /> : <FavoriteBorder />}
+            </IconButton>
+          </CardMedia>
+
           <Box
             className={`${classes.button} ${
               hover && hasAvailableSize ? classes.showButton : ""
             }`}
-          >
-            {hasAvailableSize ? (
-              <Button
-                size="small"
-                color="inherit"
-                onClick={() =>
-                  dispatch({
-                    type: "ADD_ITEM",
-                    payload: {
-                      price: firstAvailableSizePrice,
-                      id,
-                      options: {
-                        size: firstAvailableSize,
-                        pot: "No Pot",
-                      },
+            onClick={() => {
+              if (hasAvailableSize) {
+                dispatch({
+                  type: "ADD_ITEM",
+                  payload: {
+                    price: firstAvailableSizePrice,
+                    id,
+                    options: {
+                      size: firstAvailableSize,
+                      pot: "No Pot",
                     },
-                  })
-                }
-              >
-                Buy
-              </Button>
-            ) : null}
+                  },
+                });
+              }
+            }}
+          >
+            {hasAvailableSize ? "Buy" : null}
           </Box>
         </div>
         <CardContent className={classes.content}>
@@ -135,10 +141,14 @@ const Product = ({
               Out of Stock
             </Typography>
           )}
-          <Typography variant="body2">{location}</Typography>
-          <Typography variant="body2">{care_level}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {location}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {care_level}
+          </Typography>
         </CardContent>
-      </Card>
+      </Box>
       <ProductDetails
         open={showDetails}
         onClose={handleCloseDetails}

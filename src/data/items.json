@@ -568,5 +568,770 @@
         "available": false
       }
     }
+  },
+  {
+    "id": 11,
+    "name": "Lavender",
+    "family": "Lamiaceae",
+    "imgUrls": [
+      "/images/Lavender-1.jpg",
+      "/images/Lavender-2.jpg",
+      "/images/Lavender-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun",
+      "light_type": "Direct",
+      "water": "Once a week",
+      "soil": "Well-draining"
+    },
+    "description": "Lavender is a fragrant, flowering plant known for its beautiful purple blooms and soothing scent. Ideal for outdoor gardens, it thrives in full sun and well-draining soil. Lavender symbolizes calmness and tranquility, making it a popular choice for relaxation and stress relief.",
+    "sizes": {
+      "small": {
+        "price": 7.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 12.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 12,
+        "available": true
+      },
+      "large": {
+        "price": 17.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 18,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 22.99,
+        "dimensions": { "h": 48, "w": 40 },
+        "potSize": 24,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 12,
+    "name": "Aloe Vera",
+    "family": "Asphodelaceae",
+    "imgUrls": [
+      "/images/Aloe-Vera-1.jpg",
+      "/images/Aloe-Vera-2.jpg",
+      "/images/Aloe-Vera-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Direct/Indirect",
+      "water": "Every 2-3 weeks",
+      "soil": "Cactus Mix"
+    },
+    "description": "Aloe Vera is a succulent plant known for its medicinal properties. It thrives in bright light and requires minimal watering. It's perfect for indoor and outdoor environments and is often used in skin care and natural remedies.",
+    "sizes": {
+      "small": {
+        "price": 5.99,
+        "dimensions": { "h": 10, "w": 8 },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "price": 9.99,
+        "dimensions": { "h": 20, "w": 16 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 14.99,
+        "dimensions": { "h": 30, "w": 24 },
+        "potSize": 15,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 19.99,
+        "dimensions": { "h": 40, "w": 32 },
+        "potSize": 20,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 13,
+    "name": "Bamboo Palm",
+    "family": "Arecaceae",
+    "imgUrls": [
+      "/images/Bamboo-Palm-1.jpg",
+      "/images/Bamboo-Palm-2.jpg",
+      "/images/Bamboo-Palm-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Medium",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Well-draining"
+    },
+    "description": "The Bamboo Palm is known for its lush, green foliage and air-purifying qualities. It prefers medium light and regular watering, making it an ideal plant for both indoor and outdoor spaces, adding a tropical touch.",
+    "sizes": {
+      "small": {
+        "price": 15.99,
+        "dimensions": { "h": 15, "w": 12 },
+        "potSize": 6,
+        "available": false
+      },
+      "medium": {
+        "price": 22.99,
+        "dimensions": { "h": 30, "w": 24 },
+        "potSize": 12,
+        "available": true
+      },
+      "large": {
+        "price": 29.99,
+        "dimensions": { "h": 45, "w": 36 },
+        "potSize": 18,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 39.99,
+        "dimensions": { "h": 60, "w": 48 },
+        "potSize": 24,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 14,
+    "name": "Dwarf Citrus Tree",
+    "family": "Rutaceae",
+    "imgUrls": [
+      "/images/Dwarf-Citrus-Tree-1.jpg",
+      "/images/Dwarf-Citrus-Tree-2.jpg",
+      "/images/Dwarf-Citrus-Tree-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun",
+      "light_type": "Direct",
+      "water": "Twice a week",
+      "soil": "Fertile, Well-draining"
+    },
+    "description": "The Dwarf Citrus Tree is a compact, fruit-bearing tree suitable for small outdoor spaces. It thrives in full sun and requires regular watering and care. It adds a fresh, aromatic presence to any garden.",
+    "sizes": {
+      "small": {
+        "price": 24.99,
+        "dimensions": { "h": 18, "w": 15 },
+        "potSize": 8,
+        "available": true
+      },
+      "medium": {
+        "price": 34.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 12,
+        "available": false
+      },
+      "large": {
+        "price": 44.99,
+        "dimensions": { "h": 54, "w": 45 },
+        "potSize": 18,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 59.99,
+        "dimensions": { "h": 72, "w": 60 },
+        "potSize": 24,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Orchid",
+    "family": "Orchidaceae",
+    "imgUrls": [
+      "/images/Orchid-1.jpg",
+      "/images/Orchid-2.jpg",
+      "/images/Orchid-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Orchid Mix"
+    },
+    "description": "Orchids are exotic flowering plants, famous for their vibrant blooms and elegant appearance. They require bright, indirect light and careful watering, making them a beautiful addition to any indoor setting.",
+    "sizes": {
+      "small": {
+        "price": 12.99,
+        "dimensions": { "h": 10, "w": 8 },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "price": 19.99,
+        "dimensions": { "h": 20, "w": 16 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 29.99,
+        "dimensions": { "h": 30, "w": 24 },
+        "potSize": 15,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 39.99,
+        "dimensions": { "h": 40, "w": 32 },
+        "potSize": 20,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 16,
+    "name": "Boston Fern",
+    "family": "Nephrolepidaceae",
+    "imgUrls": [
+      "/images/Boston-Fern-1.jpg",
+      "/images/Boston-Fern-2.jpg",
+      "/images/Boston-Fern-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Low to Medium",
+      "light_type": "Indirect",
+      "water": "Twice a week",
+      "soil": "Rich, Well-draining"
+    },
+    "description": "Boston Ferns are popular for their lush, feathery fronds and air-purifying qualities. They thrive in low to medium light and prefer a humid environment, making them great for both indoor and outdoor shaded areas.",
+    "sizes": {
+      "small": {
+        "price": 9.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 15.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 21.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 14,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 28.99,
+        "dimensions": { "h": 48, "w": 40 },
+        "potSize": 18,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Jasmine",
+    "family": "Oleaceae",
+    "imgUrls": [
+      "/images/Jasmine-1.jpg",
+      "/images/Jasmine-2.jpg",
+      "/images/Jasmine-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun to Partial Shade",
+      "light_type": "Direct/Indirect",
+      "water": "Twice a week",
+      "soil": "Well-draining"
+    },
+    "description": "Jasmine is a fragrant flowering plant, ideal for outdoor gardens or patios. It requires full sun to partial shade and regular watering. Its sweet aroma makes it a popular choice for outdoor sitting areas.",
+    "sizes": {
+      "small": {
+        "price": 10.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 16.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 12,
+        "available": true
+      },
+      "large": {
+        "price": 22.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 18,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 30.99,
+        "dimensions": { "h": 48, "w": 40 },
+        "potSize": 24,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 18,
+    "name": "Cactus Assortment",
+    "family": "Cactaceae",
+    "imgUrls": [
+      "/images/Cactus-1.jpg",
+      "/images/Cactus-2.jpg",
+      "/images/Cactus-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Direct",
+      "water": "Every 3-4 weeks",
+      "soil": "Cactus Mix"
+    },
+    "description": "An assortment of cacti, perfect for those seeking low-maintenance plants. Suitable for both indoor and outdoor settings, they require bright light and infrequent watering. They add a unique, desert-like feel to any space.",
+    "sizes": {
+      "small": {
+        "price": 4.99,
+        "dimensions": { "h": 5, "w": 4 },
+        "potSize": 3,
+        "available": true
+      },
+      "medium": {
+        "price": 9.99,
+        "dimensions": { "h": 10, "w": 8 },
+        "potSize": 6,
+        "available": true
+      },
+      "large": {
+        "price": 14.99,
+        "dimensions": { "h": 15, "w": 12 },
+        "potSize": 9,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 19.99,
+        "dimensions": { "h": 20, "w": 16 },
+        "potSize": 12,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 19,
+    "name": "Succulent Mix",
+    "family": "Various",
+    "imgUrls": [
+      "/images/Succulent-Mix-1.jpg",
+      "/images/Succulent-Mix-2.jpg",
+      "/images/Succulent-Mix-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Bright",
+      "light_type": "Direct/Indirect",
+      "water": "Every 2-3 weeks",
+      "soil": "Cactus Mix"
+    },
+    "description": "A diverse mix of succulent plants, perfect for creating a low-maintenance indoor or outdoor garden. These hardy plants need bright light and occasional watering, offering an array of textures and colors.",
+    "sizes": {
+      "small": {
+        "price": 6.99,
+        "dimensions": { "h": 6, "w": 5 },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "price": 11.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 8,
+        "available": false
+      },
+      "large": {
+        "price": 16.99,
+        "dimensions": { "h": 18, "w": 15 },
+        "potSize": 12,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 22.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 16,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 20,
+    "name": "Rosemary",
+    "family": "Lamiaceae",
+    "imgUrls": [
+      "/images/Rosemary-1.jpg",
+      "/images/Rosemary-2.jpg",
+      "/images/Rosemary-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun",
+      "light_type": "Direct",
+      "water": "Once a week",
+      "soil": "Well-draining"
+    },
+    "description": "Rosemary is a fragrant herb known for its culinary and ornamental uses. Thriving in full sun, it's perfect for outdoor herb gardens or as a potted plant. It adds both flavor and a pleasant aroma to any space.",
+    "sizes": {
+      "small": {
+        "price": 5.99,
+        "dimensions": { "h": 8, "w": 6 },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "price": 9.99,
+        "dimensions": { "h": 16, "w": 12 },
+        "potSize": 8,
+        "available": false
+      },
+      "large": {
+        "price": 13.99,
+        "dimensions": { "h": 24, "w": 18 },
+        "potSize": 12,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 18.99,
+        "dimensions": { "h": 32, "w": 24 },
+        "potSize": 16,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 21,
+    "name": "Peace Lily",
+    "family": "Araceae",
+    "imgUrls": [
+      "/images/Peace-Lily-1.jpg",
+      "/images/Peace-Lily-2.jpg",
+      "/images/Peace-Lily-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low to Medium",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Moist, Well-draining"
+    },
+    "description": "The Peace Lily is a popular indoor plant known for its white flowers and air-purifying qualities. It thrives in low to medium indirect light, making it perfect for indoor spaces with less natural light.",
+    "sizes": {
+      "small": {
+        "price": 8.99,
+        "dimensions": { "h": 10, "w": 8 },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "price": 13.99,
+        "dimensions": { "h": 20, "w": 16 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 18.99,
+        "dimensions": { "h": 30, "w": 24 },
+        "potSize": 15,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 24.99,
+        "dimensions": { "h": 40, "w": 32 },
+        "potSize": 20,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 22,
+    "name": "Spider Plant",
+    "family": "Asparagaceae",
+    "imgUrls": [
+      "/images/Spider-Plant-1.jpg",
+      "/images/Spider-Plant-2.jpg",
+      "/images/Spider-Plant-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Medium",
+      "light_type": "Indirect",
+      "water": "Once a week",
+      "soil": "Well-draining"
+    },
+    "description": "The Spider Plant is an adaptable and easy-to-grow indoor plant. It thrives in medium indirect light and regular watering. Known for its air-purifying qualities and unique spiderette offshoots.",
+    "sizes": {
+      "small": {
+        "price": 7.99,
+        "dimensions": { "h": 8, "w": 6 },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "price": 12.99,
+        "dimensions": { "h": 16, "w": 12 },
+        "potSize": 8,
+        "available": false
+      },
+      "large": {
+        "price": 17.99,
+        "dimensions": { "h": 24, "w": 18 },
+        "potSize": 12,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 22.99,
+        "dimensions": { "h": 32, "w": 24 },
+        "potSize": 16,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 23,
+    "name": "Geranium",
+    "family": "Geraniaceae",
+    "imgUrls": [
+      "/images/Geranium-1.jpg",
+      "/images/Geranium-2.jpg",
+      "/images/Geranium-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun",
+      "light_type": "Direct",
+      "water": "Twice a week",
+      "soil": "Well-draining"
+    },
+    "description": "Geraniums are popular outdoor plants with vibrant flowers and a pleasant scent. They thrive in full sun and need regular watering. Ideal for adding a splash of color to gardens or balconies.",
+    "sizes": {
+      "small": {
+        "price": 6.99,
+        "dimensions": { "h": 10, "w": 8 },
+        "potSize": 5,
+        "available": true
+      },
+      "medium": {
+        "price": 11.99,
+        "dimensions": { "h": 20, "w": 16 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 16.99,
+        "dimensions": { "h": 30, "w": 24 },
+        "potSize": 15,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 21.99,
+        "dimensions": { "h": 40, "w": 32 },
+        "potSize": 20,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 24,
+    "name": "Yucca",
+    "family": "Asparagaceae",
+    "imgUrls": [
+      "/images/Yucca-1.jpg",
+      "/images/Yucca-2.jpg",
+      "/images/Yucca-3.jpg"
+    ],
+    "care_level": "Easy",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Full Sun to Partial Shade",
+      "light_type": "Direct/Indirect",
+      "water": "Every 2-3 weeks",
+      "soil": "Well-draining"
+    },
+    "description": "Yucca plants are striking and low-maintenance, suitable for both indoor and outdoor settings. They prefer full sun to partial shade and infrequent watering, making them drought-tolerant.",
+    "sizes": {
+      "small": {
+        "price": 9.99,
+        "dimensions": { "h": 15, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 14.99,
+        "dimensions": { "h": 30, "w": 20 },
+        "potSize": 10,
+        "available": false
+      },
+      "large": {
+        "price": 19.99,
+        "dimensions": { "h": 45, "w": 30 },
+        "potSize": 14,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 24.99,
+        "dimensions": { "h": 60, "w": 40 },
+        "potSize": 18,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 26,
+    "name": "Hydrangea",
+    "family": "Hydrangeaceae",
+    "imgUrls": [
+      "/images/Hydrangea-1.jpg",
+      "/images/Hydrangea-2.jpg",
+      "/images/Hydrangea-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Outdoor",
+    "conditions": {
+      "light_amount": "Partial Shade",
+      "light_type": "Indirect",
+      "water": "Twice a week",
+      "soil": "Rich, Moist"
+    },
+    "description": "Hydrangeas are known for their large, colorful blossoms, ranging from blue to pink. They prefer partial shade and moist, rich soil. Ideal for adding a bold splash of color to any outdoor space.",
+    "sizes": {
+      "small": {
+        "price": 8.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 13.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 12,
+        "available": false
+      },
+      "large": {
+        "price": 18.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 18,
+        "available": true
+      },
+      "extraLarge": {
+        "price": 23.99,
+        "dimensions": { "h": 48, "w": 40 },
+        "potSize": 24,
+        "available": false
+      }
+    }
+  },
+  {
+    "id": 29,
+    "name": "English Ivy",
+    "family": "Araliaceae",
+    "imgUrls": [
+      "/images/English-Ivy-1.jpg",
+      "/images/English-Ivy-2.jpg",
+      "/images/English-Ivy-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor/Outdoor",
+    "conditions": {
+      "light_amount": "Low to Medium",
+      "light_type": "Indirect",
+      "water": "Twice a week",
+      "soil": "Moist, Well-draining"
+    },
+    "description": "English Ivy is a versatile plant that can be grown both indoors and outdoors. It's known for its ability to climb and cover structures, making it great for adding greenery to walls or as a ground cover in gardens.",
+    "sizes": {
+      "small": {
+        "price": 8.99,
+        "dimensions": { "h": 12, "w": 10 },
+        "potSize": 6,
+        "available": true
+      },
+      "medium": {
+        "price": 13.99,
+        "dimensions": { "h": 24, "w": 20 },
+        "potSize": 10,
+        "available": true
+      },
+      "large": {
+        "price": 18.99,
+        "dimensions": { "h": 36, "w": 30 },
+        "potSize": 14,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 24.99,
+        "dimensions": { "h": 48, "w": 40 },
+        "potSize": 18,
+        "available": true
+      }
+    }
+  },
+  {
+    "id": 30,
+    "name": "Calathea",
+    "family": "Marantaceae",
+    "imgUrls": [
+      "/images/Calathea-1.jpg",
+      "/images/Calathea-2.jpg",
+      "/images/Calathea-3.jpg"
+    ],
+    "care_level": "Moderate",
+    "location": "Indoor",
+    "conditions": {
+      "light_amount": "Low",
+      "light_type": "Indirect",
+      "water": "Twice a week",
+      "soil": "Rich, Moist"
+    },
+    "description": "Calathea, also known as prayer plant, is admired for its beautifully patterned leaves. It thrives in low light and needs consistent moisture, making it a stunning addition to indoor spaces where it can add a splash of color.",
+    "sizes": {
+      "small": {
+        "price": 9.99,
+        "dimensions": { "h": 8, "w": 7 },
+        "potSize": 4,
+        "available": true
+      },
+      "medium": {
+        "price": 14.99,
+        "dimensions": { "h": 16, "w": 14 },
+        "potSize": 8,
+        "available": true
+      },
+      "large": {
+        "price": 19.99,
+        "dimensions": { "h": 24, "w": 21 },
+        "potSize": 12,
+        "available": false
+      },
+      "extraLarge": {
+        "price": 25.99,
+        "dimensions": { "h": 32, "w": 28 },
+        "potSize": 16,
+        "available": true
+      }
+    }
   }
 ]
