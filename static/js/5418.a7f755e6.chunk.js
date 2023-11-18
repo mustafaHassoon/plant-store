@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[5418],{5418:function(e,t,s){e.exports=s.p+"static/media/Philodendron-2.790e0bb6b337173fe32a.jpg"}}]);

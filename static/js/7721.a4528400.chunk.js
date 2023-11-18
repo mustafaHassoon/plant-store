@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[7721],{7721:function(t,s,e){t.exports=e.p+"static/media/Succulent-Mix-3.f2fba33875bc2fd0202f.jpg"}}]);

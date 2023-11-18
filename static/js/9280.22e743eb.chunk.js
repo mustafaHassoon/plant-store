@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[9280],{9280:function(t,e,s){t.exports=s.p+"static/media/Fiddle-Leaf-Fig-3.b9268dbf6374693acd45.jpg"}}]);

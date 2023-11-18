@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[3806],{3806:function(t,s,e){t.exports=e.p+"static/media/Cactus-3.237cb74f820e74b981b1.jpg"}}]);

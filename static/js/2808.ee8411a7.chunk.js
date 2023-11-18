@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[2808],{2808:function(t,s,e){t.exports=e.p+"static/media/ZZ-Plant-1.90a028058510730a24a1.jpg"}}]);

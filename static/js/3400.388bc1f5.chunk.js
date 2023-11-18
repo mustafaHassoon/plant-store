@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[3400],{3400:function(t,s,e){t.exports=e.p+"static/media/Monstera-2.2f8765d4cb67341564ea.jpg"}}]);

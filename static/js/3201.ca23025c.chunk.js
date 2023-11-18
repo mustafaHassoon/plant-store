@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[3201],{3201:function(s,t,e){s.exports=e.p+"static/media/Bird's-Nest-Fern-2.66faaae79936d83113a2.jpg"}}]);

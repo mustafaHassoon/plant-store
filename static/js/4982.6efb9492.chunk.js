@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[4982],{4982:function(t,s,e){t.exports=e.p+"static/media/Rubber-Plant-1.5594d79969b1bc007821.jpg"}}]);

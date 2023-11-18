@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[6885],{6885:function(e,s,t){e.exports=t.p+"static/media/Chinese-Evergreen-2.078971c32e9c2354d883.jpg"}}]);
