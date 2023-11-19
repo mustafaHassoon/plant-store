@@ -9,8 +9,9 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Logo from "./Logo"; // Make sure you import your Logo component correctly
+import Logo from "./Logo";
 import { makeStyles } from "@mui/styles";
+import { useFooterStyles } from "./Footer.style";
 
 const useStyles = makeStyles({
   footerText: {
@@ -47,35 +48,68 @@ const Footer = () => {
           </Grid>
 
           <Grid item md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: 2,
-              }}
-            >
-              <Link color="inherit" href="#">
-                <Typography variant="body2" className={classes.footerText}>
-                  About
-                </Typography>
-              </Link>
-              <Link color="inherit" href="#">
-                <Typography variant="body2" className={classes.footerText}>
-                  Privacy Policy
-                </Typography>
-              </Link>
-              <Link color="inherit" href="#">
-                <Typography variant="body2" className={classes.footerText}>
-                  Terms of Use
-                </Typography>
-              </Link>
-              <Link color="inherit" href="#">
-                <Typography variant="body2" className={classes.footerText}>
-                  Contact Us
-                </Typography>
-              </Link>
-            </Box>
+            <Grid container justifyContent="space-between" alignItems="center">
+              <Grid item>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link color="inherit" href="#">
+                    <Typography variant="body2" className={classes.footerText}>
+                      About
+                    </Typography>
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link color="inherit" href="#">
+                    <Typography variant="body2" className={classes.footerText}>
+                      Privacy Policy
+                    </Typography>
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link color="inherit" href="#">
+                    <Typography variant="body2" className={classes.footerText}>
+                      Terms of Use
+                    </Typography>
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link color="inherit" href="#">
+                    <Typography variant="body2" className={classes.footerText}>
+                      Contact Us
+                    </Typography>
+                  </Link>
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
 
           <Grid item md={2}>
