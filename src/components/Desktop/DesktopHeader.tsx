@@ -1,16 +1,17 @@
 import React from "react";
-import { Tabs, Tab, Box, Grid } from "@material-ui/core";
+import { Tabs, Tab, Box, Grid } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { Badge, IconButton, Theme, Typography } from "@mui/material";
 import Logo from "../Logo";
-import Drawer from "@mui/material/Drawer";
 import { useHeaderStyles } from "../Header.style";
 import DropdownSearch from "../DropdownSearch";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { red } from "@mui/material/colors";
+import theme from "../../theme";
 
 type DesktopHeaderProps = {
   currentPath: string;
-  cart: any; // Replace "any" with the correct type
+  cart: any;
   toggleCartDrawer: (
     open: boolean
   ) => (event: React.KeyboardEvent | React.MouseEvent) => void;
@@ -43,48 +44,34 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
         >
           <Tabs
             value={currentPath}
-            classes={{ indicator: classes.indicator }}
+            textColor="secondary"
+            indicatorColor="secondary"
+            //classes={{ indicator: classes.indicator }}
             centered
           >
             <Tab
               value="/"
               component={RouterLink}
               to="/"
-              label={
-                <Typography sx={{ fontFamily: "'Fjalla One', sans-serif" }}>
-                  Home
-                </Typography>
-              }
+              label={<Typography>Home</Typography>}
             />
             <Tab
               value="/about"
               component={RouterLink}
               to="/about"
-              label={
-                <Typography sx={{ fontFamily: "'Fjalla One', sans-serif" }}>
-                  About
-                </Typography>
-              }
+              label={<Typography>About</Typography>}
             />
             <Tab
               value="/store"
               component={RouterLink}
               to="/store"
-              label={
-                <Typography sx={{ fontFamily: "'Fjalla One', sans-serif" }}>
-                  Store
-                </Typography>
-              }
+              label={<Typography>Store</Typography>}
             />
             <Tab
               value="/find-us"
               component={RouterLink}
               to="/find-us"
-              label={
-                <Typography sx={{ fontFamily: "'Fjalla One', sans-serif" }}>
-                  Find Us
-                </Typography>
-              }
+              label={<Typography>Find Us</Typography>}
             />
           </Tabs>
         </Box>
