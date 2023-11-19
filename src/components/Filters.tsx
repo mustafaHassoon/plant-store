@@ -20,16 +20,6 @@ const Filters = React.memo(() => {
     setOpen(!open);
   };
 
-  const handleToggleButtonChange = (event, newValue) => {
-    // create a synthetic event to match what handleLocationChange expects
-    const syntheticEvent = {
-      target: {
-        name: event.currentTarget.name,
-        checked: newValue,
-      },
-    } as React.ChangeEvent<HTMLInputElement>;
-  };
-
   const Paper = styled(MuiPaper)(({ theme }) => ({
     padding: 0,
     margin: "10px auto",
@@ -61,8 +51,8 @@ const Filters = React.memo(() => {
       style={{
         position: "sticky",
         top: "0",
-        width: isSmallScreen ? "100%" : "250px", // conditional width
-        paddingTop: isSmallScreen ? "5%" : "15%", // conditional padding-top
+        width: isSmallScreen ? "100%" : "250px",
+        paddingTop: isSmallScreen ? "5%" : "15%",
         zIndex: 1000,
       }}
     >

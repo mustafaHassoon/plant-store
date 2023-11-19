@@ -23,7 +23,6 @@ import {
 import React from "react";
 
 const CartItem = (item) => {
-  //console.log("Props received in CartItem:", item);
   const [product, setProduct] = useState(null);
   const dispatch = useCartDispatch();
   const [exitTransition, setExitTransition] = useState(false);
@@ -34,9 +33,7 @@ const CartItem = (item) => {
       try {
         const product = await service.getProductById(item.id);
         setProduct(product);
-      } catch (error) {
-        //console.error(`Error fetching product with id ${item.id}: ${error}`);
-      }
+      } catch (error) {}
     }
     fetchProduct();
   }, [item.id]);
@@ -69,11 +66,10 @@ const CartItem = (item) => {
   }, [item.id]);
 
   if (!product) {
-    return null; // or some kind of placeholder
+    return null;
   }
 
   function handleIncrement(id) {
-    //console.log("Incrementing quantity");
     dispatch({ type: "INCREMENT_QUANTITY", payload: id });
   }
 

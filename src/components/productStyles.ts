@@ -6,15 +6,13 @@ const useStyles = makeStyles((theme) => ({
     width: 300,
     height: 390,
     marginTop: 55,
-    // top: 100,
-    // right: 100,
     borderRadius: 0,
     boxShadow: "0px 0px 0px 0px",
   },
   root: {
     "&&": {
       position: "absolute",
-      zIndex: 2, // Ensure it's above the image
+      zIndex: 2,
 
       color: "rgba(255, 255, 255, 0.7)",
       display: "none ",
@@ -26,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
   media: {
     cursor: "default !important",
-    position: "relative", // This establishes a new positioning context
-    objectFit: "cover", // cover the container without stretching
+    position: "relative",
+    objectFit: "cover",
     marginTop: "15px",
     marginLeft: "15px",
     marginRight: "15px",
@@ -39,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   favoriteButton: {
     "&&": {
       position: "absolute",
-      zIndex: 2, // Ensure it's above the image
+      zIndex: 2,
       top: 0,
       right: 0,
       color: Colors.primary,
@@ -54,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     "&&": {
       color: Colors.primary,
       "&:hover": {
-        color: Colors.primary, // This ensures that the hover color remains consistent with the primary color.
+        color: Colors.primary,
       },
     },
   },
@@ -91,12 +89,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(0, 0, 0, 0.7)",
     },
     "&:active": {
-      //transform: "scale(0.95)",
       backgroundColor: "rgba(0, 0, 0, 0.8)",
-      transform: "translateY(1px)", // Slightly moves the button down
-      boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.25)", // Inner shadow for an indented look
-      // Optional: Adjust color or other properties for the active state
-      //transform: "scale(0.95) translateY(2px)",
+      transform: "translateY(1px)",
+      boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.25)",
     },
   },
   showButton: {

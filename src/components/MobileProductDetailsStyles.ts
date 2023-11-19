@@ -27,11 +27,6 @@ export const useProductDetailsMobileStyles = makeStyles((theme: Theme) => ({
     gridItem: {
       boxSizing: "border-box",
     },
-    // formControl: {
-    //   margin: theme.spacing(1),
-    //   minWidth: 120,
-    //   width: "90%",
-    // },
   },
   productImage: {
     [theme.breakpoints.down("md")]: {
@@ -44,24 +39,21 @@ export const useProductDetailsMobileStyles = makeStyles((theme: Theme) => ({
   gridItemCentered: {
     "&&": {
       display: "flex",
-      flexDirection: "column", // Aligns children vertically
-      justifyContent: "center", // Centers children vertically within the item
-      alignItems: "center", // Centers children horizontally
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
       height: "100%",
-      width: "100%", // Ensures the item takes the full width available
+      width: "100%",
     },
   },
 
   buyButton: {
     "&&": {
-      //backgroundColor: theme.palette.secondary.light,
-      //padding: "10px 20px ",
       width: "100%",
       top: 10,
       padding: theme.spacing(1),
       borderRadius: "5px",
       textAlign: "center",
-      //margin: theme.spacing(2),
     },
   },
   productDetails: {
@@ -80,11 +72,7 @@ export const useProductDetailsMobileStyles = makeStyles((theme: Theme) => ({
       padding: theme.spacing(3),
     },
   },
-  // productInfo: {
-  //   [theme.breakpoints.down("md")]: {
-  //     height: 200,
-  //   },
-  // },
+
   closeButtonContainer: {
     position: "absolute",
     top: 0,
@@ -147,8 +135,7 @@ export const useProductDetailsMobileStyles = makeStyles((theme: Theme) => ({
   },
   productButtons: {
     display: "flex",
-    alignItems: "center", // Vertically centers the content
-
+    alignItems: "center",
     height: "85px",
     justifyContent: "center",
     position: "fixed",
@@ -164,9 +151,9 @@ export const useProductDetailsMobileStyles = makeStyles((theme: Theme) => ({
   },
 
   productHeader: {
-    flexDirection: "row", // Ensures horizontal layout
-    justifyContent: "space-between", // Spaces out the children
-    alignItems: "center", // Aligns items vertically
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     display: "flex",
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),

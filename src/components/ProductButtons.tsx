@@ -85,7 +85,7 @@ const ProductButtons = ({
               <Button
                 className={classes.buyButton}
                 onClick={isInCart() ? handleRemoveFromCart : handleAddToCart}
-                disabled={!selectedSize} // Disable the button if no size is selected
+                disabled={!selectedSize}
                 fullWidth
               >
                 {isInCart() ? "Remove from cart" : "Buy"}

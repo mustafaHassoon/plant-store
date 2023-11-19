@@ -1,4 +1,4 @@
-import { Theme } from "@material-ui/core";
+import { Theme } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 
 export const useCartStyles = makeStyles((theme: Theme) =>
@@ -6,7 +6,6 @@ export const useCartStyles = makeStyles((theme: Theme) =>
     lastCartItem: {
       marginBottom: "64px",
     },
-    // ...
     "@global": {
       ".cart-item-enter": {
         opacity: 0,

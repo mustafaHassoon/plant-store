@@ -5,11 +5,10 @@ import { useTheme } from "@mui/material/styles";
 
 type LogoProps = {
   color?: "primary" | "secondary";
-  showText?: boolean; // added this new prop
+  showText?: boolean;
 };
 
 const Logo: React.FC<LogoProps> = ({ color = "primary", showText = true }) => {
-  // set default value for showText to true
   const theme = useTheme();
 
   const colorMapping = {

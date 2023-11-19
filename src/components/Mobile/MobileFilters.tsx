@@ -11,11 +11,9 @@ import {
   Button,
   Collapse,
 } from "@mui/material";
-
 import { RxExit } from "react-icons/rx";
 import { RxEnter } from "react-icons/rx";
 import TuneIcon from "@mui/icons-material/Tune";
-
 import useFiltersHook from "../../hooks/filtersHook";
 import { useFilterStyles } from "../filterStyles";
 

@@ -1,23 +1,18 @@
 import useProductDetails from "../../hooks/useProductDetails";
-
-import { Dialog, Box } from "@material-ui/core";
-
+import { Dialog } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import ImagesCarousel from "../ImagesCarousel";
-
 import { useProductDetailsMobileStyles } from "../MobileProductDetailsStyles";
 import ProductButtons from "../ProductButtons";
 import ProductTitle from "../ProductTitle";
 import ProductDescription from "../ProductDescription";
-
 import ProductDetailsSpecifications from "../ProductDetailsSpecifications";
 import { Grid } from "@mui/material";
 
 const MobileProductDetails = ({ product, onClose, open, isMobile }) => {
   const classes = useProductDetailsMobileStyles();
   const theme = useTheme();
-  //const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isFullScreen = useMediaQuery("(max-width: 999px)");
 
   const {

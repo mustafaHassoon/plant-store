@@ -4,9 +4,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import MenuItem from "@mui/material/MenuItem";
 import { Link as RouterLink } from "react-router-dom";
-import Logo from "../Logo"; // Make sure this import works in your setup
+import Logo from "../Logo";
 import { Badge, Grid } from "@mui/material";
-import DropdownSearch from "../DropdownSearch"; // Make sure this import works in your setup
+import DropdownSearch from "../DropdownSearch";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 type MobileHeaderProps = {

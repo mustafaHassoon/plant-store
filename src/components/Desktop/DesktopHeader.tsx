@@ -6,8 +6,6 @@ import Logo from "../Logo";
 import { useHeaderStyles } from "../Header.style";
 import DropdownSearch from "../DropdownSearch";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { red } from "@mui/material/colors";
-import theme from "../../theme";
 
 type DesktopHeaderProps = {
   currentPath: string;
@@ -46,7 +44,6 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
             value={currentPath}
             textColor="secondary"
             indicatorColor="secondary"
-            //classes={{ indicator: classes.indicator }}
             centered
           >
             <Tab

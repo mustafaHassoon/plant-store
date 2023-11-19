@@ -101,14 +101,14 @@ const DropdownSearch: React.FC<DropdownSearchProps> = ({ isMobile }) => {
                 </IconButton>
               ),
               sx: {
-                paddingLeft: 1, // Remove left padding from the input field
+                paddingLeft: 1,
                 paddingBottom: 0,
                 paddingTop: 0,
               },
             }}
             onKeyPress={(ev) => {
               if (ev.key === "Enter") {
-                // Call your handleSearchClick function when Enter is pressed
+                // Call handleSearchClick function when Enter is pressed
                 handleSearchClick();
                 ev.preventDefault();
               }

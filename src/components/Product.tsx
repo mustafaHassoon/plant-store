@@ -1,19 +1,10 @@
 // Product.tsx
 import React, { useEffect, useState } from "react";
 
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  Paper,
-} from "@mui/material";
+import { CardMedia, CardContent, Typography, Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import Favorite from "@mui/icons-material/Favorite"; // Import the filled icon
-
+import Favorite from "@mui/icons-material/Favorite";
 import useStyles from "./productStyles";
 import { useCartDispatch } from "../context/CartContext";
 import ProductDetails from "./ProductDetails";
@@ -92,7 +83,7 @@ const Product = ({
               }}
               aria-label="Add to favorites"
               onClick={(event) => {
-                event.stopPropagation(); // Prevents the click from propagating to the parent
+                event.stopPropagation();
                 setIsFavorite(!isFavorite);
               }}
             >

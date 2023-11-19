@@ -32,9 +32,9 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
   },
 
   productHeader: {
-    flexDirection: "row", // Ensures horizontal layout
-    justifyContent: "space-between", // Spaces out the children
-    alignItems: "center", // Aligns items vertically
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     display: "flex",
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
@@ -50,17 +50,6 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.primary.main,
   },
 
-  // combinedSection: {
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   justifyContent: "space-between",
-  //   marginTop: theme.spacing(2),
-  //   marginBottom: theme.spacing(2),
-  //   flexGrow: 1,
-  //   overflowY: "auto",
-  //   marginRight: theme.spacing(2),
-  //   height: "80px",
-  // },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),

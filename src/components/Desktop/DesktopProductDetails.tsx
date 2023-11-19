@@ -1,11 +1,7 @@
 import useProductDetails from "../../hooks/useProductDetails";
-
-import { Dialog, Box, Grid } from "@material-ui/core";
-
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { Dialog, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import ImagesCarousel from "../ImagesCarousel";
-
 import { useProductDetailsDesktopStyles } from "../DesktopProductDetailsStyles";
 import ProductButtons from "../ProductButtons";
 import ProductDetailsSpecifications from "../ProductDetailsSpecifications";
