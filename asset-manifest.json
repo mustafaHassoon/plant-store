@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/plant-store/static/js/main.463d7ef4.js",
+    "main.js": "/plant-store/static/js/main.4f50f005.js",
     "static/js/3820.d764c54d.chunk.js": "/plant-store/static/js/3820.d764c54d.chunk.js",
     "static/js/3589.495a72a8.chunk.js": "/plant-store/static/js/3589.495a72a8.chunk.js",
     "static/js/3996.e8b5db99.chunk.js": "/plant-store/static/js/3996.e8b5db99.chunk.js",
@@ -170,9 +170,9 @@
     "static/media/fallback.jpg": "/plant-store/static/media/fallback.0e667f65ba6dabe6dfb9.jpg",
     "static/media/greenerizer-logo.png": "/plant-store/static/media/greenerizer-logo.c947f82d494ca7775f41.png",
     "index.html": "/plant-store/index.html",
-    "main.463d7ef4.js.map": "/plant-store/static/js/main.463d7ef4.js.map"
+    "main.4f50f005.js.map": "/plant-store/static/js/main.4f50f005.js.map"
   },
   "entrypoints": [
-    "static/js/main.463d7ef4.js"
+    "static/js/main.4f50f005.js"
   ]
 }
