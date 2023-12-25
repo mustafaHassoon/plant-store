@@ -36,75 +36,9 @@ const theme = createTheme({
 
   typography: {
     fontFamily: '"Fjalla One", sans-serif', // Set the global font family
-    // h1: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h1
-    // },
-    // h2: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h2
-    // },
-    // h3: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h3
-    // },
-    // h4: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h4
-    // },
-    // h5: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h5
-    // },
-    // h6: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to h6
-    // },
-    // subtitle1: {
-    //   fontFamily: '"Fjalla One", sans-serif',
-    //   //... other styles specific to subtitle1
-    // },
-    // ... continue for other typography variants
   },
 
-  components: {
-    // MuiCssBaseline: {
-    //   styleOverrides: {
-    //     body: {
-    //       fontFamily: '"Fjalla One", sans-serif',
-    //     },
-    //   },
-    // },
-    // MuiButtonBase: {
-    //   styleOverrides: {
-    //     root: {
-    //       fontFamily: "'Fjalla One', sans-serif",
-    //     },
-    //   },
-    // },
-    // MuiTab: {
-    //   styleOverrides: {
-    //     root: {
-    //       "&.MuiTab-root": {
-    //         // Increase specificity by repeating the class
-    //         fontFamily: '"Fjalla One", sans-serif ',
-    //       },
-    //       wrapper: {
-    //         fontFamily: "Fjalla One, sans-serif ",
-    //       },
-    //     },
-    //   },
-    // },
-    // MuiTypography: {
-    //   styleOverrides: {
-    //     root: {
-    //       "&.MuiTypography-h6": {
-    //         fontFamily: '"Fjalla One", sans-serif ',
-    //       },
-    //     },
-    //   },
-    // },
-  },
+  components: {},
 });
 
 export default theme;
