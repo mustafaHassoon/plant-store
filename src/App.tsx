@@ -17,7 +17,7 @@ export const App = () => {
         <Header />
         <div style={{ flex: 1 }}>
           <Routes>
-            <Route path="#/home" element={<Home />} />
+            <Route path="#/" element={<Home />} />
             <Route path="#/store" element={<Store />} />
             <Route path="#/about" element={<About />} />
             <Route path="#/find-us" element={<FindUs />} />
