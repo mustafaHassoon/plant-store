@@ -17,10 +17,10 @@ export const App = () => {
         <Header />
         <div style={{ flex: 1 }}>
           <Routes>
-            <Route path="#/" element={<Home />} />
-            <Route path="#/store" element={<Store />} />
-            <Route path="#/about" element={<About />} />
-            <Route path="#/find-us" element={<FindUs />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/find-us" element={<FindUs />} />
           </Routes>
         </div>
         <Footer />
