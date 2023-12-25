@@ -11,7 +11,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Logo from "./Logo";
 import { makeStyles } from "@mui/styles";
-import { useFooterStyles } from "./Footer.style";
 
 const useStyles = makeStyles({
   footerText: {

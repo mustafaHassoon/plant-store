@@ -10,7 +10,6 @@ const ProductDescription = ({ product, isMobile }) => {
   return (
     <>
       <Box className={classes.productDescription}>
-        {/* description */}
         <Typography variant="body2" sx={{ marginLeft: 2, marginRight: 2 }}>
           {product.description}
         </Typography>

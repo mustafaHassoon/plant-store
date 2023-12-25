@@ -27,7 +27,7 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
   return (
     <Grid container alignItems="center">
       <Grid item xs={1}>
-        {/* Leftmost grid item is empty */}
+        {/* Left grid item is empty */}
       </Grid>
       <Grid item xs={1}>
         <Logo color="secondary" />

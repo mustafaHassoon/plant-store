@@ -1,5 +1,4 @@
 import Product from "../components/Product";
-
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -7,9 +6,7 @@ import Container from "@mui/material/Container";
 import ItemsPagination from "../components/ItemsPagination";
 import { Grow } from "@mui/material";
 import { IconButton } from "@mui/material";
-
 import Typography from "@mui/material/Typography";
-
 import { useFilterContext } from "../context/FilterContext";
 import Filters from "../components/Filters";
 import CloseIcon from "@mui/icons-material/Close";
@@ -20,16 +17,7 @@ const Store = () => {
 
   const [products, setProducts] = useState([]);
 
-  const {
-    filterState,
-    handleSizeChange,
-    handleHeightChange,
-    handleLocationChange,
-    handleCareLevelChange,
-    handlePriceRangeChange,
-    handleSearchTextChange,
-    resetFilters,
-  } = useFilterContext();
+  const { filterState, resetFilters } = useFilterContext();
 
   const formatSelectedLocations = (locationFilter) => {
     let locations = [];

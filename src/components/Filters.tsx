@@ -58,10 +58,8 @@ const Filters = React.memo(() => {
     >
       <Paper>
         {!isSmallScreen ? (
-          // Render accordion components for medium and large screens
           <DesktopFilters />
         ) : (
-          // Render layout for small screens
           <MobileFilters
             isOpened={isOpenedRef.current}
             toggleOpen={toggleOpen}

@@ -4,7 +4,6 @@ import {
   Popover,
   TextField,
   Box,
-  useMediaQuery,
   useTheme,
   IconButton,
 } from "@mui/material";

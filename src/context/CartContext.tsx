@@ -1,13 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import service from "../services";
-import React from "react";
-
-if (process.env.NODE_ENV === "development") {
-  const whyDidYouRender = require("@welldone-software/why-did-you-render");
-  whyDidYouRender(React, {
-    trackAllPureComponents: true,
-  });
-}
 
 const initialCart = {
   items: [],
@@ -49,10 +41,6 @@ export function CartProvider({ children }) {
       </CartDispatchContext.Provider>
     </CartContext.Provider>
   );
-}
-
-if (process.env.NODE_ENV === "development") {
-  CartProvider.whyDidYouRender = true;
 }
 
 export function useCart() {

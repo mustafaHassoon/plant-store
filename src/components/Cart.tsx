@@ -172,6 +172,4 @@ const Cart = ({ items, onClose }) => {
   );
 };
 
-Cart.whyDidYouRender = true;
-
 export default Cart;

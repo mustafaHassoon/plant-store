@@ -11,7 +11,6 @@ import ProductDescription from "../ProductDescription";
 const DesktopProductDetails = ({ onClose, product, open, isMobile }) => {
   const classes = useProductDetailsDesktopStyles();
   const theme = useTheme();
-  //const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const {
     selectedSize,

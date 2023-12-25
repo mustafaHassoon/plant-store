@@ -1,5 +1,3 @@
-// useProductDetails.ts
-
 import { useState } from "react";
 import { useCartDispatch, useCart } from "../context/CartContext";
 

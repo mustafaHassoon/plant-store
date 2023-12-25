@@ -1,11 +1,8 @@
 import products from "../data/items.json";
-import { useContext } from "react";
-import { useFilterContext } from "../context/FilterContext";
 
 const service = {
   getData: (
     { from, to } = { from: 0, to: products.length },
-
     locationFilter,
     careLevelFilter,
     sizeFilter,
@@ -100,11 +97,11 @@ const service = {
         );
 
         if (aAvailable && !bAvailable) {
-          return -1; // a comes first
+          return -1;
         } else if (!aAvailable && bAvailable) {
-          return 1; // b comes first
+          return 1;
         }
-        return 0; // no change in order
+        return 0;
       });
 
       const data = filteredData.slice(from, to);

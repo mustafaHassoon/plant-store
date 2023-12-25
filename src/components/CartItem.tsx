@@ -1,4 +1,3 @@
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import { Colors } from "../theme";
@@ -162,7 +161,5 @@ const CartItem = (item) => {
     </Slide>
   );
 };
-
-CartItem.whyDidYouRender = true;
 
 export default React.memo(CartItem);
