@@ -21,6 +21,7 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
   },
 
   productButtons: {
+    padding: "0 0 0 1rem", // top-right-bottom-left
     height: "60px",
     display: "flex",
     alignItems: "center",
@@ -41,6 +42,8 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
   },
 
   productHeaderTitle: {
+    padding: "0rem 1rem 0 1rem", // top-right-bottom-left
+    boxSizing: "border-box",
     flex: 3,
   },
 
@@ -69,6 +72,7 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
   productDetails: {
     width: 200,
     height: 450,
+    backgroundColor: "#8AA39B",
     display: "flex",
     flexDirection: "column",
   },
@@ -82,6 +86,8 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
     position: "relative",
   },
   productDetailsTextContainer: {
+    backgroundColor: "#8AA39B",
+    color: "#fff",
     width: 150,
     height: 450,
     display: "flex",
@@ -112,6 +118,7 @@ export const useProductDetailsDesktopStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
     justifyContent: "center",
     height: 50,
+    gap: "0.7rem",    
   },
   formControl: {
     width: "90%",
