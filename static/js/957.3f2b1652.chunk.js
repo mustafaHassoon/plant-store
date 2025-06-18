@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[957],{957:(s,t,e)=>{s.exports=e.p+"static/media/Pothos-3.41346058497677b08a55.jpg"}}]);

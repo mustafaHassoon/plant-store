@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[2449],{2449:(e,s,t)=>{e.exports=t.p+"static/media/Peace-Lily-1.25845c88f5ec247fbe83.jpg"}}]);

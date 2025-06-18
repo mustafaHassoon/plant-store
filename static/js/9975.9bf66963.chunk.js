@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[9975],{9975:function(e,t,s){e.exports=s.p+"static/media/Boston-Fern-3.2727509fd381e5c3ee21.jpg"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[5961],{5961:(s,t,e)=>{s.exports=e.p+"static/media/Orchid-3.d670956676a660c80e42.jpg"}}]);

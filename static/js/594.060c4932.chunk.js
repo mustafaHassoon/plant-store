@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[594],{594:(t,s,e)=>{t.exports=e.p+"static/media/Spider-Plant-2.8ac52fafbf4a3b9344d7.jpg"}}]);

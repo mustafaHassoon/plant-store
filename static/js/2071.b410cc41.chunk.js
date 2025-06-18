@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[2071],{2071:(e,s,t)=>{e.exports=t.p+"static/media/Dwarf-Citrus-Tree-2.a3273f64ff3fe6440d5d.jpg"}}]);

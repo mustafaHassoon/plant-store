@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[1735],{1735:(e,s,t)=>{e.exports=t.p+"static/media/Geranium-2.a0ecd043729fe7fa054f.jpg"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[1242],{1242:(e,s,t)=>{e.exports=t.p+"static/media/Aloe-Vera-3.bce5d51054d169d237e8.jpg"}}]);

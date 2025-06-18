@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[7875],{7875:(e,t,s)=>{e.exports=s.p+"static/media/Calathea-3.348f1ea789ae53eaec20.jpg"}}]);

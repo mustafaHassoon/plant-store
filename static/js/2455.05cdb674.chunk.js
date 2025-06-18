@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[2455],{2455:(s,t,e)=>{s.exports=e.p+"static/media/Cactus-1.6ba8abeced0b79c202aa.jpg"}}]);

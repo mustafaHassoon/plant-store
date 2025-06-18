@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[2328],{2328:(s,t,e)=>{s.exports=e.p+"static/media/Boston-Fern-2.b2298c8d2e17d983a298.jpg"}}]);

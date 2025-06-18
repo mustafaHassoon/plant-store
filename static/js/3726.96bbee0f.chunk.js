@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[3726],{3726:(s,t,e)=>{s.exports=e.p+"static/media/Monstera-2.2f8765d4cb67341564ea.jpg"}}]);

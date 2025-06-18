@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[3589],{3589:function(e,t,s){e.exports=s.p+"static/media/greenerizer-logo.c947f82d494ca7775f41.png"}}]);

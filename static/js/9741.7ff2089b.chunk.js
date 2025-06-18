@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[9741],{9741:(e,s,t)=>{e.exports=t.p+"static/media/Bamboo-Palm-1.224640178e3518be3e01.jpg"}}]);

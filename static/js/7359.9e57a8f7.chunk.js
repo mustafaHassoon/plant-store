@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[7359],{7359:function(t,e,s){t.exports=s.p+"static/media/Spider-Plant-3.e527ca80db40f068019a.jpg"}}]);

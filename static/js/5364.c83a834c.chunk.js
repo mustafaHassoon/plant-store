@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[5364],{5364:(e,t,s)=>{e.exports=s.p+"static/media/Snake-Plant-1.efc157466c76d38b3c3e.jpg"}}]);

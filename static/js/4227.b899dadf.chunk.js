@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[4227],{4227:(s,t,c)=>{s.exports=c.p+"static/media/Yucca-3.fddcc6f314c36b764bac.jpg"}}]);
